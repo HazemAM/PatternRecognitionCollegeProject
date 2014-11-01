@@ -113,12 +113,14 @@ namespace PatternRecognition
 
         private int normalRandom(int mu, int sigma)
         {
-            int randNormal = rand.Next(Math.Min(mu,sigma), Math.Max(mu,sigma));
+            //int randNormal = rand.Next(Math.Min(mu,sigma), Math.Max(mu,sigma));
 
-            //double u1 = rand.NextDouble(),
-            //       u2 = rand.NextDouble(); //uniform (0,1)
-            //double randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2); //random normal (0,1)
-            //double randNormal = mu + sigma * randStdNormal; //random normal (mean,stdDev^2)
+            double u1 = rand.NextDouble(),
+                   u2 = rand.NextDouble(); //uniform (0,1)
+            double randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2); //random normal (0,1)
+            double randNormal = mu + sigma * randStdNormal; //random normal (mean,stdDev^2)
+            randNormal = randNormal>255 ? 255 : randNormal;
+            randNormal = randNormal<0   ? 0   : randNormal;
             
             //double pOfX = (1 / (Math.Sqrt(2 * Math.PI) * sigma)) * Math.Exp(-0.5 * Math.Pow((u1 - Math.PI) / sigma, 2));
 
