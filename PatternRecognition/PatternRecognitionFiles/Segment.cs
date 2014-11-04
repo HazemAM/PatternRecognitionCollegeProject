@@ -33,11 +33,11 @@ namespace PatternRecognition
                     temp=img.GetPixel(i,j);
                     x = (temp.R + temp.G + temp.B) / 3;
                     for (int k = 0; k < length; k++)
-                        pxw[i] = Distributions.Normal(x, classes[i].mu[0], classes[i].sigma[0]);
+                        pxw[k] = Distributions.Normal(x, classes[k].mu, classes[k].sigma);
                     for (int k = 0; k < length; k++)
-                        Px += pxw[i];
+                        Px += pxw[k];
                     for (int k = 0; k < length; k++)
-                        pwx[i] = pxw[i] / Px;
+                        pwx[k] = pxw[k] / Px;
                     index = Array.IndexOf(pwx,Max(pwx));
                     res.SetPixel(i, j, classes[index].color);
                 }

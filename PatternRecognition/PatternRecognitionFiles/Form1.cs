@@ -36,6 +36,7 @@ namespace PatternRecognition
                         "Not Supported", MessageBoxButtons.OK);
                     return;
                 }
+                theBitmapImage = toGrayScale(theBitmapImage);
                 leftPictureBox.Image = theBitmapImage;
             }
         }
@@ -106,9 +107,18 @@ namespace PatternRecognition
             return bitmap;
         }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+        private void btnGenerate1_Click(object sender, EventArgs e)
         {
             leftPictureBox.Image = generateImage(350,350);
+        }
+
+        private void btnGenerate2_Click(object sender, EventArgs e)
+        {
+            Class class1 = new Class((double)numTask2RMu1.Value, (double)numTask2RSigma1.Value, Color.Red);
+            Class class2 = new Class((double)numTask2RMu2.Value, (double)numTask2RSigma2.Value, Color.Green);
+            Class class3 = new Class((double)numTask2RMu3.Value, (double)numTask2RSigma3.Value, Color.Blue);
+            Class class4 = new Class((double)numTask2RMu4.Value, (double)numTask2RSigma4.Value, Color.Cyan);
+            rightPictureBox.Image = new Segment(new Class[]{class1,class2,class3,class4},theBitmapImage).getResult();
         }
 
         private int normalRandom(int mu, int sigma)
@@ -125,6 +135,34 @@ namespace PatternRecognition
             //double pOfX = (1 / (Math.Sqrt(2 * Math.PI) * sigma)) * Math.Exp(-0.5 * Math.Pow((u1 - Math.PI) / sigma, 2));
 
             return (int)randNormal;
+        }
+
+        private void leftPictureBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            NumericUpDown input = null;
+                 if(numTask2RMu1.Focused) input=numTask2RMu1;
+            else if(numTask2RMu2.Focused) input=numTask2RMu2;
+            else if(numTask2RMu3.Focused) input=numTask2RMu3;
+            else if(numTask2RMu4.Focused) input=numTask2RMu4;
+
+            if(input!=null) input.Value=theBitmapImage.GetPixel(e.X,e.Y).R;
+
+            /***TESTING***/
+            //if(leftPictureBox.Image!=null && e.X<theBitmapImage.Width && e.Y<theBitmapImage.Height)
+            //    theBitmapImage.SetPixel(e.X,e.Y,Color.Red);
+            //leftPictureBox.Refresh();
+        }
+
+        private Bitmap toGrayScale(Bitmap bitmap){
+            Bitmap newBitmap = new Bitmap(bitmap.Width,bitmap.Height);
+            for(int j=0; j<newBitmap.Height; j++)
+                for(int i=0; i<newBitmap.Width; i++){
+                    Color oldColor = bitmap.GetPixel(i, j);
+                    int greyValue = (int)(0.2126*oldColor.R + 0.7152*oldColor.G + 0.0722*oldColor.B);
+                    Color newColor = Color.FromArgb(greyValue,greyValue,greyValue);
+                    newBitmap.SetPixel(i,j,newColor);
+                }
+            return newBitmap;
         }
     }
 }

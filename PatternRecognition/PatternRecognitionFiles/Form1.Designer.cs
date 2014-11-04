@@ -40,18 +40,6 @@ namespace PatternRecognition
             this.numRMu3 = new System.Windows.Forms.NumericUpDown();
             this.numRSigma4 = new System.Windows.Forms.NumericUpDown();
             this.numRMu4 = new System.Windows.Forms.NumericUpDown();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.grpboxTask1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelBlue = new System.Windows.Forms.Label();
-            this.labelGreen = new System.Windows.Forms.Label();
-            this.labelRed = new System.Windows.Forms.Label();
-            this.btnGenerate = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.leftPictureBox = new System.Windows.Forms.PictureBox();
-            this.rightPictureBox = new System.Windows.Forms.PictureBox();
-            this.saveDialog = new System.Windows.Forms.SaveFileDialog();
             this.numGSigma4 = new System.Windows.Forms.NumericUpDown();
             this.numGMu4 = new System.Windows.Forms.NumericUpDown();
             this.numGSigma3 = new System.Windows.Forms.NumericUpDown();
@@ -68,6 +56,32 @@ namespace PatternRecognition
             this.numBMu2 = new System.Windows.Forms.NumericUpDown();
             this.numBSigma1 = new System.Windows.Forms.NumericUpDown();
             this.numBMu1 = new System.Windows.Forms.NumericUpDown();
+            this.numTask2RSigma4 = new System.Windows.Forms.NumericUpDown();
+            this.numTask2RMu4 = new System.Windows.Forms.NumericUpDown();
+            this.numTask2RSigma3 = new System.Windows.Forms.NumericUpDown();
+            this.numTask2RMu3 = new System.Windows.Forms.NumericUpDown();
+            this.numTask2RSigma2 = new System.Windows.Forms.NumericUpDown();
+            this.numTask2RMu2 = new System.Windows.Forms.NumericUpDown();
+            this.numTask2RSigma1 = new System.Windows.Forms.NumericUpDown();
+            this.numTask2RMu1 = new System.Windows.Forms.NumericUpDown();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.grpboxTask1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelBlue = new System.Windows.Forms.Label();
+            this.labelGreen = new System.Windows.Forms.Label();
+            this.labelRed = new System.Windows.Forms.Label();
+            this.btnGenerate1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnGenerate2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.leftPictureBox = new System.Windows.Forms.PictureBox();
+            this.rightPictureBox = new System.Windows.Forms.PictureBox();
+            this.saveDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.numRMu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRSigma1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRSigma2)).BeginInit();
@@ -76,12 +90,6 @@ namespace PatternRecognition
             ((System.ComponentModel.ISupportInitialize)(this.numRMu3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRSigma4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRMu4)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.grpboxTask1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.leftPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rightPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGSigma4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGMu4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGSigma3)).BeginInit();
@@ -98,6 +106,21 @@ namespace PatternRecognition
             ((System.ComponentModel.ISupportInitialize)(this.numBMu2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBSigma1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBMu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu1)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.grpboxTask1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leftPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOpen
@@ -268,178 +291,6 @@ namespace PatternRecognition
             0,
             0,
             0});
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.54971F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(914, 561);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.btnOpen, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.grpboxTask1, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 394);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(908, 164);
-            this.tableLayoutPanel3.TabIndex = 3;
-            // 
-            // grpboxTask1
-            // 
-            this.grpboxTask1.Controls.Add(this.numBSigma4);
-            this.grpboxTask1.Controls.Add(this.numBMu4);
-            this.grpboxTask1.Controls.Add(this.numBSigma3);
-            this.grpboxTask1.Controls.Add(this.numBMu3);
-            this.grpboxTask1.Controls.Add(this.numBSigma2);
-            this.grpboxTask1.Controls.Add(this.numBMu2);
-            this.grpboxTask1.Controls.Add(this.numBSigma1);
-            this.grpboxTask1.Controls.Add(this.numBMu1);
-            this.grpboxTask1.Controls.Add(this.numGSigma4);
-            this.grpboxTask1.Controls.Add(this.numGMu4);
-            this.grpboxTask1.Controls.Add(this.numGSigma3);
-            this.grpboxTask1.Controls.Add(this.numGMu3);
-            this.grpboxTask1.Controls.Add(this.numGSigma2);
-            this.grpboxTask1.Controls.Add(this.numGMu2);
-            this.grpboxTask1.Controls.Add(this.numGSigma1);
-            this.grpboxTask1.Controls.Add(this.numGMu1);
-            this.grpboxTask1.Controls.Add(this.label1);
-            this.grpboxTask1.Controls.Add(this.numRSigma4);
-            this.grpboxTask1.Controls.Add(this.numRMu4);
-            this.grpboxTask1.Controls.Add(this.labelBlue);
-            this.grpboxTask1.Controls.Add(this.numRSigma3);
-            this.grpboxTask1.Controls.Add(this.numRMu3);
-            this.grpboxTask1.Controls.Add(this.labelGreen);
-            this.grpboxTask1.Controls.Add(this.numRSigma2);
-            this.grpboxTask1.Controls.Add(this.numRMu2);
-            this.grpboxTask1.Controls.Add(this.labelRed);
-            this.grpboxTask1.Controls.Add(this.numRSigma1);
-            this.grpboxTask1.Controls.Add(this.numRMu1);
-            this.grpboxTask1.Controls.Add(this.btnGenerate);
-            this.grpboxTask1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpboxTask1.Location = new System.Drawing.Point(3, 3);
-            this.grpboxTask1.Name = "grpboxTask1";
-            this.grpboxTask1.Size = new System.Drawing.Size(379, 158);
-            this.grpboxTask1.TabIndex = 2;
-            this.grpboxTask1.TabStop = false;
-            this.grpboxTask1.Text = "Task 1";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Class 4:";
-            // 
-            // labelBlue
-            // 
-            this.labelBlue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelBlue.AutoSize = true;
-            this.labelBlue.Location = new System.Drawing.Point(14, 77);
-            this.labelBlue.Name = "labelBlue";
-            this.labelBlue.Size = new System.Drawing.Size(44, 13);
-            this.labelBlue.TabIndex = 10;
-            this.labelBlue.Text = "Class 3:";
-            // 
-            // labelGreen
-            // 
-            this.labelGreen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelGreen.AutoSize = true;
-            this.labelGreen.Location = new System.Drawing.Point(14, 51);
-            this.labelGreen.Name = "labelGreen";
-            this.labelGreen.Size = new System.Drawing.Size(44, 13);
-            this.labelGreen.TabIndex = 7;
-            this.labelGreen.Text = "Class 2:";
-            // 
-            // labelRed
-            // 
-            this.labelRed.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelRed.AutoSize = true;
-            this.labelRed.Location = new System.Drawing.Point(14, 25);
-            this.labelRed.Name = "labelRed";
-            this.labelRed.Size = new System.Drawing.Size(44, 13);
-            this.labelRed.TabIndex = 4;
-            this.labelRed.Text = "Class 1:";
-            // 
-            // btnGenerate
-            // 
-            this.btnGenerate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGenerate.Location = new System.Drawing.Point(140, 125);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(100, 26);
-            this.btnGenerate.TabIndex = 0;
-            this.btnGenerate.Text = "Generate Image";
-            this.btnGenerate.UseVisualStyleBackColor = true;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.leftPictureBox, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.rightPictureBox, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(914, 391);
-            this.tableLayoutPanel1.TabIndex = 13;
-            // 
-            // leftPictureBox
-            // 
-            this.leftPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.leftPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.leftPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.leftPictureBox.Margin = new System.Windows.Forms.Padding(0);
-            this.leftPictureBox.Name = "leftPictureBox";
-            this.leftPictureBox.Size = new System.Drawing.Size(457, 391);
-            this.leftPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.leftPictureBox.TabIndex = 0;
-            this.leftPictureBox.TabStop = false;
-            this.leftPictureBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_DoubleClick);
-            this.leftPictureBox.MouseHover += new System.EventHandler(this.pictureBox_MouseHover);
-            // 
-            // rightPictureBox
-            // 
-            this.rightPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.rightPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rightPictureBox.Location = new System.Drawing.Point(457, 0);
-            this.rightPictureBox.Margin = new System.Windows.Forms.Padding(0);
-            this.rightPictureBox.Name = "rightPictureBox";
-            this.rightPictureBox.Size = new System.Drawing.Size(457, 391);
-            this.rightPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.rightPictureBox.TabIndex = 11;
-            this.rightPictureBox.TabStop = false;
-            this.rightPictureBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_DoubleClick);
-            this.rightPictureBox.MouseHover += new System.EventHandler(this.pictureBox_MouseHover);
-            // 
-            // saveDialog
-            // 
-            this.saveDialog.DefaultExt = "jpg";
-            this.saveDialog.FileName = "image";
-            this.saveDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveDialog_FileOk);
             // 
             // numGSigma4
             // 
@@ -745,6 +596,404 @@ namespace PatternRecognition
             0,
             0});
             // 
+            // numTask2RSigma4
+            // 
+            this.numTask2RSigma4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numTask2RSigma4.Location = new System.Drawing.Point(138, 100);
+            this.numTask2RSigma4.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numTask2RSigma4.Name = "numTask2RSigma4";
+            this.numTask2RSigma4.Size = new System.Drawing.Size(42, 20);
+            this.numTask2RSigma4.TabIndex = 24;
+            this.toolTip.SetToolTip(this.numTask2RSigma4, "Sigma value");
+            this.numTask2RSigma4.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numTask2RMu4
+            // 
+            this.numTask2RMu4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numTask2RMu4.Location = new System.Drawing.Point(90, 100);
+            this.numTask2RMu4.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numTask2RMu4.Name = "numTask2RMu4";
+            this.numTask2RMu4.Size = new System.Drawing.Size(42, 20);
+            this.numTask2RMu4.TabIndex = 23;
+            this.toolTip.SetToolTip(this.numTask2RMu4, "Mu value");
+            this.numTask2RMu4.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numTask2RSigma3
+            // 
+            this.numTask2RSigma3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numTask2RSigma3.Location = new System.Drawing.Point(138, 75);
+            this.numTask2RSigma3.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numTask2RSigma3.Name = "numTask2RSigma3";
+            this.numTask2RSigma3.Size = new System.Drawing.Size(42, 20);
+            this.numTask2RSigma3.TabIndex = 21;
+            this.toolTip.SetToolTip(this.numTask2RSigma3, "Sigma value");
+            this.numTask2RSigma3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numTask2RMu3
+            // 
+            this.numTask2RMu3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numTask2RMu3.Location = new System.Drawing.Point(90, 75);
+            this.numTask2RMu3.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numTask2RMu3.Name = "numTask2RMu3";
+            this.numTask2RMu3.Size = new System.Drawing.Size(42, 20);
+            this.numTask2RMu3.TabIndex = 20;
+            this.toolTip.SetToolTip(this.numTask2RMu3, "Mu value");
+            this.numTask2RMu3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numTask2RSigma2
+            // 
+            this.numTask2RSigma2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numTask2RSigma2.Location = new System.Drawing.Point(138, 49);
+            this.numTask2RSigma2.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numTask2RSigma2.Name = "numTask2RSigma2";
+            this.numTask2RSigma2.Size = new System.Drawing.Size(42, 20);
+            this.numTask2RSigma2.TabIndex = 18;
+            this.toolTip.SetToolTip(this.numTask2RSigma2, "Sigma value");
+            this.numTask2RSigma2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numTask2RMu2
+            // 
+            this.numTask2RMu2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numTask2RMu2.Location = new System.Drawing.Point(90, 49);
+            this.numTask2RMu2.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numTask2RMu2.Name = "numTask2RMu2";
+            this.numTask2RMu2.Size = new System.Drawing.Size(42, 20);
+            this.numTask2RMu2.TabIndex = 17;
+            this.toolTip.SetToolTip(this.numTask2RMu2, "Mu value");
+            this.numTask2RMu2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numTask2RSigma1
+            // 
+            this.numTask2RSigma1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numTask2RSigma1.Location = new System.Drawing.Point(138, 23);
+            this.numTask2RSigma1.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numTask2RSigma1.Name = "numTask2RSigma1";
+            this.numTask2RSigma1.Size = new System.Drawing.Size(42, 20);
+            this.numTask2RSigma1.TabIndex = 15;
+            this.toolTip.SetToolTip(this.numTask2RSigma1, "Sigma value");
+            this.numTask2RSigma1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numTask2RMu1
+            // 
+            this.numTask2RMu1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numTask2RMu1.Location = new System.Drawing.Point(90, 23);
+            this.numTask2RMu1.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numTask2RMu1.Name = "numTask2RMu1";
+            this.numTask2RMu1.Size = new System.Drawing.Size(42, 20);
+            this.numTask2RMu1.TabIndex = 14;
+            this.toolTip.SetToolTip(this.numTask2RMu1, "Mu value");
+            this.numTask2RMu1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.54971F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(914, 561);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.btnOpen, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.grpboxTask1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.groupBox1, 2, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 394);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(908, 164);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // grpboxTask1
+            // 
+            this.grpboxTask1.Controls.Add(this.numBSigma4);
+            this.grpboxTask1.Controls.Add(this.numBMu4);
+            this.grpboxTask1.Controls.Add(this.numBSigma3);
+            this.grpboxTask1.Controls.Add(this.numBMu3);
+            this.grpboxTask1.Controls.Add(this.numBSigma2);
+            this.grpboxTask1.Controls.Add(this.numBMu2);
+            this.grpboxTask1.Controls.Add(this.numBSigma1);
+            this.grpboxTask1.Controls.Add(this.numBMu1);
+            this.grpboxTask1.Controls.Add(this.numGSigma4);
+            this.grpboxTask1.Controls.Add(this.numGMu4);
+            this.grpboxTask1.Controls.Add(this.numGSigma3);
+            this.grpboxTask1.Controls.Add(this.numGMu3);
+            this.grpboxTask1.Controls.Add(this.numGSigma2);
+            this.grpboxTask1.Controls.Add(this.numGMu2);
+            this.grpboxTask1.Controls.Add(this.numGSigma1);
+            this.grpboxTask1.Controls.Add(this.numGMu1);
+            this.grpboxTask1.Controls.Add(this.label1);
+            this.grpboxTask1.Controls.Add(this.numRSigma4);
+            this.grpboxTask1.Controls.Add(this.numRMu4);
+            this.grpboxTask1.Controls.Add(this.labelBlue);
+            this.grpboxTask1.Controls.Add(this.numRSigma3);
+            this.grpboxTask1.Controls.Add(this.numRMu3);
+            this.grpboxTask1.Controls.Add(this.labelGreen);
+            this.grpboxTask1.Controls.Add(this.numRSigma2);
+            this.grpboxTask1.Controls.Add(this.numRMu2);
+            this.grpboxTask1.Controls.Add(this.labelRed);
+            this.grpboxTask1.Controls.Add(this.numRSigma1);
+            this.grpboxTask1.Controls.Add(this.numRMu1);
+            this.grpboxTask1.Controls.Add(this.btnGenerate1);
+            this.grpboxTask1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpboxTask1.Location = new System.Drawing.Point(3, 3);
+            this.grpboxTask1.Name = "grpboxTask1";
+            this.grpboxTask1.Size = new System.Drawing.Size(379, 158);
+            this.grpboxTask1.TabIndex = 2;
+            this.grpboxTask1.TabStop = false;
+            this.grpboxTask1.Text = "Task 1";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Class 4:";
+            // 
+            // labelBlue
+            // 
+            this.labelBlue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelBlue.AutoSize = true;
+            this.labelBlue.Location = new System.Drawing.Point(14, 77);
+            this.labelBlue.Name = "labelBlue";
+            this.labelBlue.Size = new System.Drawing.Size(44, 13);
+            this.labelBlue.TabIndex = 10;
+            this.labelBlue.Text = "Class 3:";
+            // 
+            // labelGreen
+            // 
+            this.labelGreen.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelGreen.AutoSize = true;
+            this.labelGreen.Location = new System.Drawing.Point(14, 51);
+            this.labelGreen.Name = "labelGreen";
+            this.labelGreen.Size = new System.Drawing.Size(44, 13);
+            this.labelGreen.TabIndex = 7;
+            this.labelGreen.Text = "Class 2:";
+            // 
+            // labelRed
+            // 
+            this.labelRed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelRed.AutoSize = true;
+            this.labelRed.Location = new System.Drawing.Point(14, 25);
+            this.labelRed.Name = "labelRed";
+            this.labelRed.Size = new System.Drawing.Size(44, 13);
+            this.labelRed.TabIndex = 4;
+            this.labelRed.Text = "Class 1:";
+            // 
+            // btnGenerate1
+            // 
+            this.btnGenerate1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGenerate1.Location = new System.Drawing.Point(140, 125);
+            this.btnGenerate1.Name = "btnGenerate1";
+            this.btnGenerate1.Size = new System.Drawing.Size(100, 26);
+            this.btnGenerate1.TabIndex = 0;
+            this.btnGenerate1.Text = "Generate Image";
+            this.btnGenerate1.UseVisualStyleBackColor = true;
+            this.btnGenerate1.Click += new System.EventHandler(this.btnGenerate1_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnGenerate2);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.numTask2RSigma4);
+            this.groupBox1.Controls.Add(this.numTask2RMu4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.numTask2RSigma3);
+            this.groupBox1.Controls.Add(this.numTask2RMu3);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.numTask2RSigma2);
+            this.groupBox1.Controls.Add(this.numTask2RMu2);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.numTask2RSigma1);
+            this.groupBox1.Controls.Add(this.numTask2RMu1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(526, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(379, 158);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Task 2";
+            // 
+            // btnGenerate2
+            // 
+            this.btnGenerate2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGenerate2.Location = new System.Drawing.Point(150, 125);
+            this.btnGenerate2.Name = "btnGenerate2";
+            this.btnGenerate2.Size = new System.Drawing.Size(100, 26);
+            this.btnGenerate2.TabIndex = 30;
+            this.btnGenerate2.Text = "Generate Image";
+            this.btnGenerate2.UseVisualStyleBackColor = true;
+            this.btnGenerate2.Click += new System.EventHandler(this.btnGenerate2_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Class Cyan:";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Class Blue:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Class Green:";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Class Red:";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.leftPictureBox, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.rightPictureBox, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(914, 391);
+            this.tableLayoutPanel1.TabIndex = 13;
+            // 
+            // leftPictureBox
+            // 
+            this.leftPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.leftPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.leftPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.leftPictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this.leftPictureBox.Name = "leftPictureBox";
+            this.leftPictureBox.Size = new System.Drawing.Size(457, 391);
+            this.leftPictureBox.TabIndex = 0;
+            this.leftPictureBox.TabStop = false;
+            this.leftPictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.leftPictureBox_MouseClick);
+            this.leftPictureBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_DoubleClick);
+            this.leftPictureBox.MouseHover += new System.EventHandler(this.pictureBox_MouseHover);
+            // 
+            // rightPictureBox
+            // 
+            this.rightPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.rightPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rightPictureBox.Location = new System.Drawing.Point(457, 0);
+            this.rightPictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this.rightPictureBox.Name = "rightPictureBox";
+            this.rightPictureBox.Size = new System.Drawing.Size(457, 391);
+            this.rightPictureBox.TabIndex = 11;
+            this.rightPictureBox.TabStop = false;
+            this.rightPictureBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_DoubleClick);
+            this.rightPictureBox.MouseHover += new System.EventHandler(this.pictureBox_MouseHover);
+            // 
+            // saveDialog
+            // 
+            this.saveDialog.DefaultExt = "jpg";
+            this.saveDialog.FileName = "image";
+            this.saveDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveDialog_FileOk);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -763,13 +1012,6 @@ namespace PatternRecognition
             ((System.ComponentModel.ISupportInitialize)(this.numRMu3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRSigma4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRMu4)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.grpboxTask1.ResumeLayout(false);
-            this.grpboxTask1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.leftPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rightPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGSigma4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGMu4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGSigma3)).EndInit();
@@ -786,6 +1028,23 @@ namespace PatternRecognition
             ((System.ComponentModel.ISupportInitialize)(this.numBMu2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBSigma1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBMu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu1)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.grpboxTask1.ResumeLayout(false);
+            this.grpboxTask1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.leftPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -801,7 +1060,7 @@ namespace PatternRecognition
         private System.Windows.Forms.SaveFileDialog saveDialog;
         private System.Windows.Forms.GroupBox grpboxTask1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Button btnGenerate1;
         private System.Windows.Forms.NumericUpDown numRSigma1;
         private System.Windows.Forms.NumericUpDown numRMu1;
         private System.Windows.Forms.Label labelBlue;
@@ -830,6 +1089,20 @@ namespace PatternRecognition
         private System.Windows.Forms.NumericUpDown numGMu2;
         private System.Windows.Forms.NumericUpDown numGSigma1;
         private System.Windows.Forms.NumericUpDown numGMu1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numTask2RSigma4;
+        private System.Windows.Forms.NumericUpDown numTask2RMu4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numTask2RSigma3;
+        private System.Windows.Forms.NumericUpDown numTask2RMu3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numTask2RSigma2;
+        private System.Windows.Forms.NumericUpDown numTask2RMu2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numTask2RSigma1;
+        private System.Windows.Forms.NumericUpDown numTask2RMu1;
+        private System.Windows.Forms.Button btnGenerate2;
     }
 }
 
