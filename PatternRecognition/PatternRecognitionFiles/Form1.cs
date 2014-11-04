@@ -109,7 +109,7 @@ namespace PatternRecognition
 
         private void btnGenerate1_Click(object sender, EventArgs e)
         {
-            leftPictureBox.Image = generateImage(350,350);
+            leftPictureBox.Image = theBitmapImage = generateImage(350,350);
         }
 
         private void btnGenerate2_Click(object sender, EventArgs e)
