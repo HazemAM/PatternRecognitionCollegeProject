@@ -782,84 +782,96 @@ namespace PatternRecognition
             // 
             // txtClass4Pixel3
             // 
-            this.txtClass4Pixel3.Location = new System.Drawing.Point(275, 100);
+            this.txtClass4Pixel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass4Pixel3.Location = new System.Drawing.Point(276, 100);
             this.txtClass4Pixel3.Name = "txtClass4Pixel3";
             this.txtClass4Pixel3.Size = new System.Drawing.Size(86, 20);
             this.txtClass4Pixel3.TabIndex = 42;
             // 
             // txtClass4Pixel2
             // 
-            this.txtClass4Pixel2.Location = new System.Drawing.Point(183, 100);
+            this.txtClass4Pixel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass4Pixel2.Location = new System.Drawing.Point(184, 100);
             this.txtClass4Pixel2.Name = "txtClass4Pixel2";
             this.txtClass4Pixel2.Size = new System.Drawing.Size(86, 20);
             this.txtClass4Pixel2.TabIndex = 41;
             // 
             // txtClass4Pixel1
             // 
-            this.txtClass4Pixel1.Location = new System.Drawing.Point(91, 100);
+            this.txtClass4Pixel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass4Pixel1.Location = new System.Drawing.Point(92, 100);
             this.txtClass4Pixel1.Name = "txtClass4Pixel1";
             this.txtClass4Pixel1.Size = new System.Drawing.Size(86, 20);
             this.txtClass4Pixel1.TabIndex = 40;
             // 
             // txtClass3Pixel3
             // 
-            this.txtClass3Pixel3.Location = new System.Drawing.Point(275, 75);
+            this.txtClass3Pixel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass3Pixel3.Location = new System.Drawing.Point(276, 75);
             this.txtClass3Pixel3.Name = "txtClass3Pixel3";
             this.txtClass3Pixel3.Size = new System.Drawing.Size(86, 20);
             this.txtClass3Pixel3.TabIndex = 39;
             // 
             // txtClass3Pixel2
             // 
-            this.txtClass3Pixel2.Location = new System.Drawing.Point(183, 75);
+            this.txtClass3Pixel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass3Pixel2.Location = new System.Drawing.Point(184, 75);
             this.txtClass3Pixel2.Name = "txtClass3Pixel2";
             this.txtClass3Pixel2.Size = new System.Drawing.Size(86, 20);
             this.txtClass3Pixel2.TabIndex = 38;
             // 
             // txtClass3Pixel1
             // 
-            this.txtClass3Pixel1.Location = new System.Drawing.Point(91, 75);
+            this.txtClass3Pixel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass3Pixel1.Location = new System.Drawing.Point(92, 75);
             this.txtClass3Pixel1.Name = "txtClass3Pixel1";
             this.txtClass3Pixel1.Size = new System.Drawing.Size(86, 20);
             this.txtClass3Pixel1.TabIndex = 37;
             // 
             // txtClass2Pixel3
             // 
-            this.txtClass2Pixel3.Location = new System.Drawing.Point(275, 49);
+            this.txtClass2Pixel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass2Pixel3.Location = new System.Drawing.Point(276, 49);
             this.txtClass2Pixel3.Name = "txtClass2Pixel3";
             this.txtClass2Pixel3.Size = new System.Drawing.Size(86, 20);
             this.txtClass2Pixel3.TabIndex = 36;
             // 
             // txtClass2Pixel2
             // 
-            this.txtClass2Pixel2.Location = new System.Drawing.Point(183, 49);
+            this.txtClass2Pixel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass2Pixel2.Location = new System.Drawing.Point(184, 49);
             this.txtClass2Pixel2.Name = "txtClass2Pixel2";
             this.txtClass2Pixel2.Size = new System.Drawing.Size(86, 20);
             this.txtClass2Pixel2.TabIndex = 35;
             // 
             // txtClass2Pixel1
             // 
-            this.txtClass2Pixel1.Location = new System.Drawing.Point(91, 49);
+            this.txtClass2Pixel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass2Pixel1.Location = new System.Drawing.Point(92, 49);
             this.txtClass2Pixel1.Name = "txtClass2Pixel1";
             this.txtClass2Pixel1.Size = new System.Drawing.Size(86, 20);
             this.txtClass2Pixel1.TabIndex = 34;
             // 
             // txtClass1Pixel3
             // 
-            this.txtClass1Pixel3.Location = new System.Drawing.Point(275, 22);
+            this.txtClass1Pixel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass1Pixel3.Location = new System.Drawing.Point(276, 22);
             this.txtClass1Pixel3.Name = "txtClass1Pixel3";
             this.txtClass1Pixel3.Size = new System.Drawing.Size(86, 20);
             this.txtClass1Pixel3.TabIndex = 33;
             // 
             // txtClass1Pixel2
             // 
-            this.txtClass1Pixel2.Location = new System.Drawing.Point(183, 22);
+            this.txtClass1Pixel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass1Pixel2.Location = new System.Drawing.Point(184, 22);
             this.txtClass1Pixel2.Name = "txtClass1Pixel2";
             this.txtClass1Pixel2.Size = new System.Drawing.Size(86, 20);
             this.txtClass1Pixel2.TabIndex = 32;
             // 
             // txtClass1Pixel1
             // 
-            this.txtClass1Pixel1.Location = new System.Drawing.Point(91, 22);
+            this.txtClass1Pixel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass1Pixel1.Location = new System.Drawing.Point(92, 22);
             this.txtClass1Pixel1.Name = "txtClass1Pixel1";
             this.txtClass1Pixel1.Size = new System.Drawing.Size(86, 20);
             this.txtClass1Pixel1.TabIndex = 31;
@@ -879,7 +891,7 @@ namespace PatternRecognition
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 103);
+            this.label2.Location = new System.Drawing.Point(18, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 25;
@@ -889,7 +901,7 @@ namespace PatternRecognition
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 78);
+            this.label3.Location = new System.Drawing.Point(18, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 22;
@@ -899,7 +911,7 @@ namespace PatternRecognition
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 52);
+            this.label4.Location = new System.Drawing.Point(18, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 19;
@@ -909,7 +921,7 @@ namespace PatternRecognition
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 26);
+            this.label5.Location = new System.Drawing.Point(18, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 16;
