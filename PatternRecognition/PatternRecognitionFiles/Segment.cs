@@ -19,27 +19,49 @@ namespace PatternRecognition
 
         private void Calc()
         {
-            double x;
+            int actions = 5;
             int index;
             Color temp;
             res=new Bitmap(img);
             int length=classes.Length;
-            double[] pxw = new double[length];
+            double[,] pxw = new double[3,length];
+            double[] pxsw = new double[length];
             double[] pwx = new double[length];
+            double[] risk = new double[actions];
+            double[,] lamda = new double[,] { { 1, 2, 2, 2 }, { 2, 1, 2, 2 }, { 2, 2, 1, 2 }, { 2, 2, 2, 1 }, { 2, 2, 2, 2 } };
             double Px = 0;
             for(int i=0;i<img.Width;i++)
                 for(int j=0;j<img.Height;j++)
                 {
                     temp=img.GetPixel(i,j);
-                    x = (temp.R + temp.G + temp.B) / 3;
                     for (int k = 0; k < length; k++)
-                        pxw[k] = Distributions.Normal(x, classes[k].mu, classes[k].sigma);
+                    {
+                        pxw[0,k] = Distributions.Normal((double)temp.R, classes[k].mu[0], classes[k].sigma[0]);
+                        pxw[1, k] = Distributions.Normal((double)temp.G, classes[k].mu[1], classes[k].sigma[1]);
+                        pxw[2, k] = Distributions.Normal((double)temp.B, classes[k].mu[2], classes[k].sigma[2]);
+                    }
+                    for (int k = 1; k < length; k++)
+                    {
+                        pxsw[k] =pxw[0,k]*pxw[1,k]*pxw[2,k] ;
+                    }
                     for (int k = 0; k < length; k++)
-                        Px += pxw[k];
+                        Px += pxsw[k];
                     for (int k = 0; k < length; k++)
-                        pwx[k] = pxw[k] / Px;
-                    index = Array.IndexOf(pwx,Max(pwx));
-                    res.SetPixel(i, j, classes[index].color);
+                        pwx[k] = pxsw[k] / Px;
+                    for (int k = 0;k<actions;k++)
+                    {
+                        double sum = 0;
+                        for (int l = 0;l<length;l++)
+                            {
+                                sum = sum + lamda[k,l] * pwx[l];
+                            }
+                        risk[i] = sum;
+                }   
+                    index = Array.IndexOf(risk,Min(risk));
+                    if(index==4)
+                        res.SetPixel(i, j, Color.Black);
+                    else
+                        res.SetPixel(i, j, classes[index].color);
                 }
         }
 
@@ -50,6 +72,14 @@ namespace PatternRecognition
                 if (arr[i] > max)
                     max = arr[i];
             return max;
+        }
+        private double Min(double[] arr)
+        {
+            double min = 256;
+            for (int i = 0; i < arr.Length; i++)
+                if (arr[i] < min)
+                    min = arr[i];
+            return min;
         }
         public Bitmap getResult()
         {

@@ -121,10 +121,10 @@ namespace PatternRecognition
             }
 
             try{
-                Class class1 = new Class((double)numTask2RMu1.Value, (double)numTask2RSigma1.Value, Color.Red);
-                Class class2 = new Class((double)numTask2RMu2.Value, (double)numTask2RSigma2.Value, Color.Green);
-                Class class3 = new Class((double)numTask2RMu3.Value, (double)numTask2RSigma3.Value, Color.Blue);
-                Class class4 = new Class((double)numTask2RMu4.Value, (double)numTask2RSigma4.Value, Color.Cyan);
+                Class class1 = new Class(new double []{(double)numTask2RMu1.Value}, new double []{(double)numTask2RSigma1.Value}, Color.Red);
+                Class class2 = new Class(new double []{(double)numTask2RMu2.Value},new double []{ (double)numTask2RSigma2.Value}, Color.Green);
+                Class class3 = new Class(new double []{(double)numTask2RMu3.Value},new double []{ (double)numTask2RSigma3.Value}, Color.Blue);
+                Class class4 = new Class(new double []{(double)numTask2RMu4.Value},new double []{ (double)numTask2RSigma4.Value}, Color.Cyan);
                 rightPictureBox.Image = new Segment(new Class[]{class1,class2,class3,class4},theBitmapImage).getResult();
             } catch(Exception){
                 MessageBox.Show("Something went worng, and I have no idea about it.\nMake sure you enter mean and variance values correctly.",
