@@ -155,21 +155,21 @@ namespace PatternRecognition
                 double[] c4p3 = Array.ConvertAll(temp, double.Parse);
 
                 //COMPUTE MU AND SIGMA FOR EACH COLOR OF CLASS OF 4:
-                double mu1r = (c1p1[0]+c1p2[0]+c1p3[0])/3; double sigma1r = Math.Pow( ((c1p1[0]-mu1r)+(c1p2[0]-mu1r)+(c1p3[0]-mu1r)) , 2) / 3;
-                double mu1g = (c1p1[1]+c1p2[1]+c1p3[1])/3; double sigma1g = Math.Pow( ((c1p1[1]-mu1g)+(c1p2[1]-mu1g)+(c1p3[1]-mu1g)) , 2) / 3;
-                double mu1b = (c1p1[2]+c1p2[2]+c1p3[2])/3; double sigma1b = Math.Pow( ((c1p1[2]-mu1b)+(c1p2[2]-mu1b)+(c1p3[2]-mu1b)) , 2) / 3;
+                double mu1r = (c1p1[0]+c1p2[0]+c1p3[0])/3; double sigma1r = (Math.Pow(c1p1[0]-mu1r,2)+Math.Pow(c1p2[0]-mu1r,2)+Math.Pow(c1p3[0]-mu1r,2)) / 3;
+                double mu1g = (c1p1[1]+c1p2[1]+c1p3[1])/3; double sigma1g = (Math.Pow(c1p1[1]-mu1g,2)+Math.Pow(c1p2[1]-mu1g,2)+Math.Pow(c1p3[1]-mu1g,2)) / 3;
+                double mu1b = (c1p1[2]+c1p2[2]+c1p3[2])/3; double sigma1b = (Math.Pow(c1p1[2]-mu1b,2)+Math.Pow(c1p2[2]-mu1b,2)+Math.Pow(c1p3[2]-mu1b,2)) / 3;
 
-                double mu2r = (c2p1[0]+c2p2[0]+c2p3[0])/3; double sigma2r = Math.Pow( ((c2p1[0]-mu2r)+(c2p2[0]-mu2r)+(c2p3[0]-mu2r)) , 2) / 3;
-                double mu2g = (c2p1[1]+c2p2[1]+c2p3[1])/3; double sigma2g = Math.Pow( ((c2p1[1]-mu2g)+(c2p2[1]-mu2g)+(c2p3[1]-mu2g)) , 2) / 3;
-                double mu2b = (c2p1[2]+c2p2[2]+c2p3[2])/3; double sigma2b = Math.Pow( ((c2p1[2]-mu2b)+(c2p2[2]-mu2b)+(c2p3[2]-mu2b)) , 2) / 3;
+                double mu2r = (c2p1[0]+c2p2[0]+c2p3[0])/3; double sigma2r = (Math.Pow(c2p1[0]-mu2r,2)+Math.Pow(c2p2[0]-mu2r,2)+Math.Pow(c2p3[0]-mu2r,2)) / 3;
+                double mu2g = (c2p1[1]+c2p2[1]+c2p3[1])/3; double sigma2g = (Math.Pow(c2p1[1]-mu2g,2)+Math.Pow(c2p2[1]-mu2g,2)+Math.Pow(c2p3[1]-mu2g,2)) / 3;
+                double mu2b = (c2p1[2]+c2p2[2]+c2p3[2])/3; double sigma2b = (Math.Pow(c2p1[2]-mu2b,2)+Math.Pow(c2p2[2]-mu2b,2)+Math.Pow(c2p3[2]-mu2b,2)) / 3;
 
-                double mu3r = (c3p1[0]+c3p2[0]+c3p3[0])/3; double sigma3r = Math.Pow( ((c3p1[0]-mu3r)+(c3p2[0]-mu3r)+(c3p3[0]-mu3r)) , 2) / 3;
-                double mu3g = (c3p1[1]+c3p2[1]+c3p3[1])/3; double sigma3g = Math.Pow( ((c3p1[1]-mu3g)+(c3p2[1]-mu3g)+(c3p3[1]-mu3g)) , 2) / 3;
-                double mu3b = (c3p1[2]+c3p2[2]+c3p3[2])/3; double sigma3b = Math.Pow( ((c3p1[2]-mu3b)+(c3p2[2]-mu3b)+(c3p3[2]-mu3b)) , 2) / 3;
+                double mu3r = (c3p1[0]+c3p2[0]+c3p3[0])/3; double sigma3r = (Math.Pow(c3p1[0]-mu3r,2)+Math.Pow(c3p2[0]-mu3r,2)+Math.Pow(c3p3[0]-mu3r,2)) / 3;
+                double mu3g = (c3p1[1]+c3p2[1]+c3p3[1])/3; double sigma3g = (Math.Pow(c3p1[1]-mu3g,2)+Math.Pow(c3p2[1]-mu3g,2)+Math.Pow(c3p3[1]-mu3g,2)) / 3;
+                double mu3b = (c3p1[2]+c3p2[2]+c3p3[2])/3; double sigma3b = (Math.Pow(c3p1[2]-mu3b,2)+Math.Pow(c3p2[2]-mu3b,2)+Math.Pow(c3p3[2]-mu3b,2)) / 3;
 
-                double mu4r = (c4p1[0]+c4p2[0]+c4p3[0])/3; double sigma4r = Math.Pow( ((c4p1[0]-mu4r)+(c4p2[0]-mu4r)+(c4p3[0]-mu4r)) , 2) / 3;
-                double mu4g = (c4p1[1]+c4p2[1]+c4p3[1])/3; double sigma4g = Math.Pow( ((c4p1[1]-mu4g)+(c4p2[1]-mu4g)+(c4p3[1]-mu4g)) , 2) / 3;
-                double mu4b = (c4p1[2]+c4p2[2]+c4p3[2])/3; double sigma4b = Math.Pow( ((c4p1[2]-mu4b)+(c4p2[2]-mu4b)+(c4p3[2]-mu4b)) , 2) / 3;
+                double mu4r = (c4p1[0]+c4p2[0]+c4p3[0])/3; double sigma4r = (Math.Pow(c4p1[0]-mu4r,2)+Math.Pow(c4p2[0]-mu4r,2)+Math.Pow(c4p3[0]-mu4r,2)) / 3;
+                double mu4g = (c4p1[1]+c4p2[1]+c4p3[1])/3; double sigma4g = (Math.Pow(c4p1[1]-mu4g,2)+Math.Pow(c4p2[1]-mu4g,2)+Math.Pow(c4p3[1]-mu4g,2)) / 3;
+                double mu4b = (c4p1[2]+c4p2[2]+c4p3[2])/3; double sigma4b = (Math.Pow(c4p1[2]-mu4b,2)+Math.Pow(c4p2[2]-mu4b,2)+Math.Pow(c4p3[2]-mu4b,2)) / 3;;
 
                 //DEFINE THE 4 CLASSES:
                 Class class1 = new Class(new double[]{mu1r,mu1g,mu1b}, new double[]{sigma1r,sigma1g,sigma1b}, Color.Red);
