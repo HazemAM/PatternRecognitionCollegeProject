@@ -40,7 +40,7 @@ namespace PatternRecognition
                         pxw[1, k] = Distributions.Normal((double)temp.G, classes[k].mu[1], classes[k].sigma[1]);
                         pxw[2, k] = Distributions.Normal((double)temp.B, classes[k].mu[2], classes[k].sigma[2]);
                     }
-                    for (int k = 1; k < length; k++)
+                    for (int k = 0; k < length; k++)
                     {
                         pxsw[k] =pxw[0,k]*pxw[1,k]*pxw[2,k] ;
                     }
@@ -55,7 +55,7 @@ namespace PatternRecognition
                             {
                                 sum = sum + lamda[k,l] * pwx[l];
                             }
-                        risk[i] = sum;
+                        risk[k] = sum;
                 }   
                     index = Array.IndexOf(risk,Min(risk));
                     if(index==4)
