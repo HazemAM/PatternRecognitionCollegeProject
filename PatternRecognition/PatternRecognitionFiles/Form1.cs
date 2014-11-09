@@ -122,7 +122,7 @@ namespace PatternRecognition
                 return;
             }
 
-            try{
+            //try{
                 String[] temp;
 
                 //GETTING INPUT AND CONVERTING TO NUMBERS:
@@ -180,10 +180,10 @@ namespace PatternRecognition
                 //CLASSIFY THE IMAGE (PHEW!):
                 rightPictureBox.Image = new Segment(new Class[]{class1,class2,class3,class4}, theBitmapImage).getResult();
 
-            } catch(Exception exp){
-                MessageBox.Show("Something went wrong. Make sure you enter color values correctly.\n\n(Technically: "+exp.Message+")",
-                    "What?", MessageBoxButtons.OK);
-            }
+            //} catch(Exception exp){
+            //    MessageBox.Show("Something went wrong. Make sure you enter color values correctly.\n\n(Technically: "+exp.Message+")",
+            //        "What?", MessageBoxButtons.OK);
+            //}
         }
 
         private int normalRandom(int mu, int sigma)
