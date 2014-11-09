@@ -56,23 +56,30 @@ namespace PatternRecognition
             this.numBMu2 = new System.Windows.Forms.NumericUpDown();
             this.numBSigma1 = new System.Windows.Forms.NumericUpDown();
             this.numBMu1 = new System.Windows.Forms.NumericUpDown();
-            this.numTask2RSigma4 = new System.Windows.Forms.NumericUpDown();
-            this.numTask2RMu4 = new System.Windows.Forms.NumericUpDown();
-            this.numTask2RSigma3 = new System.Windows.Forms.NumericUpDown();
-            this.numTask2RMu3 = new System.Windows.Forms.NumericUpDown();
-            this.numTask2RSigma2 = new System.Windows.Forms.NumericUpDown();
-            this.numTask2RMu2 = new System.Windows.Forms.NumericUpDown();
-            this.numTask2RSigma1 = new System.Windows.Forms.NumericUpDown();
-            this.numTask2RMu1 = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkbxOpenGrayscale = new System.Windows.Forms.CheckBox();
             this.grpboxTask1 = new System.Windows.Forms.GroupBox();
+            this.chkbxGenGrayscale = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelBlue = new System.Windows.Forms.Label();
             this.labelGreen = new System.Windows.Forms.Label();
             this.labelRed = new System.Windows.Forms.Label();
             this.btnGenerate1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtClass4Pixel3 = new System.Windows.Forms.TextBox();
+            this.txtClass4Pixel2 = new System.Windows.Forms.TextBox();
+            this.txtClass4Pixel1 = new System.Windows.Forms.TextBox();
+            this.txtClass3Pixel3 = new System.Windows.Forms.TextBox();
+            this.txtClass3Pixel2 = new System.Windows.Forms.TextBox();
+            this.txtClass3Pixel1 = new System.Windows.Forms.TextBox();
+            this.txtClass2Pixel3 = new System.Windows.Forms.TextBox();
+            this.txtClass2Pixel2 = new System.Windows.Forms.TextBox();
+            this.txtClass2Pixel1 = new System.Windows.Forms.TextBox();
+            this.txtClass1Pixel3 = new System.Windows.Forms.TextBox();
+            this.txtClass1Pixel2 = new System.Windows.Forms.TextBox();
+            this.txtClass1Pixel1 = new System.Windows.Forms.TextBox();
             this.btnGenerate2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -106,16 +113,9 @@ namespace PatternRecognition
             ((System.ComponentModel.ISupportInitialize)(this.numBMu2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBSigma1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBMu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.grpboxTask1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -127,7 +127,7 @@ namespace PatternRecognition
             // 
             this.btnOpen.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOpen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpen.Location = new System.Drawing.Point(391, 51);
+            this.btnOpen.Location = new System.Drawing.Point(3, 43);
             this.btnOpen.Margin = new System.Windows.Forms.Padding(5);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(126, 62);
@@ -596,158 +596,6 @@ namespace PatternRecognition
             0,
             0});
             // 
-            // numTask2RSigma4
-            // 
-            this.numTask2RSigma4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numTask2RSigma4.Location = new System.Drawing.Point(138, 100);
-            this.numTask2RSigma4.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numTask2RSigma4.Name = "numTask2RSigma4";
-            this.numTask2RSigma4.Size = new System.Drawing.Size(42, 20);
-            this.numTask2RSigma4.TabIndex = 24;
-            this.toolTip.SetToolTip(this.numTask2RSigma4, "Sigma value");
-            this.numTask2RSigma4.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numTask2RMu4
-            // 
-            this.numTask2RMu4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numTask2RMu4.Location = new System.Drawing.Point(90, 100);
-            this.numTask2RMu4.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numTask2RMu4.Name = "numTask2RMu4";
-            this.numTask2RMu4.Size = new System.Drawing.Size(42, 20);
-            this.numTask2RMu4.TabIndex = 23;
-            this.toolTip.SetToolTip(this.numTask2RMu4, "Mu value");
-            this.numTask2RMu4.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numTask2RSigma3
-            // 
-            this.numTask2RSigma3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numTask2RSigma3.Location = new System.Drawing.Point(138, 75);
-            this.numTask2RSigma3.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numTask2RSigma3.Name = "numTask2RSigma3";
-            this.numTask2RSigma3.Size = new System.Drawing.Size(42, 20);
-            this.numTask2RSigma3.TabIndex = 21;
-            this.toolTip.SetToolTip(this.numTask2RSigma3, "Sigma value");
-            this.numTask2RSigma3.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numTask2RMu3
-            // 
-            this.numTask2RMu3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numTask2RMu3.Location = new System.Drawing.Point(90, 75);
-            this.numTask2RMu3.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numTask2RMu3.Name = "numTask2RMu3";
-            this.numTask2RMu3.Size = new System.Drawing.Size(42, 20);
-            this.numTask2RMu3.TabIndex = 20;
-            this.toolTip.SetToolTip(this.numTask2RMu3, "Mu value");
-            this.numTask2RMu3.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numTask2RSigma2
-            // 
-            this.numTask2RSigma2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numTask2RSigma2.Location = new System.Drawing.Point(138, 49);
-            this.numTask2RSigma2.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numTask2RSigma2.Name = "numTask2RSigma2";
-            this.numTask2RSigma2.Size = new System.Drawing.Size(42, 20);
-            this.numTask2RSigma2.TabIndex = 18;
-            this.toolTip.SetToolTip(this.numTask2RSigma2, "Sigma value");
-            this.numTask2RSigma2.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numTask2RMu2
-            // 
-            this.numTask2RMu2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numTask2RMu2.Location = new System.Drawing.Point(90, 49);
-            this.numTask2RMu2.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numTask2RMu2.Name = "numTask2RMu2";
-            this.numTask2RMu2.Size = new System.Drawing.Size(42, 20);
-            this.numTask2RMu2.TabIndex = 17;
-            this.toolTip.SetToolTip(this.numTask2RMu2, "Mu value");
-            this.numTask2RMu2.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numTask2RSigma1
-            // 
-            this.numTask2RSigma1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numTask2RSigma1.Location = new System.Drawing.Point(138, 23);
-            this.numTask2RSigma1.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numTask2RSigma1.Name = "numTask2RSigma1";
-            this.numTask2RSigma1.Size = new System.Drawing.Size(42, 20);
-            this.numTask2RSigma1.TabIndex = 15;
-            this.toolTip.SetToolTip(this.numTask2RSigma1, "Sigma value");
-            this.numTask2RSigma1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numTask2RMu1
-            // 
-            this.numTask2RMu1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numTask2RMu1.Location = new System.Drawing.Point(90, 23);
-            this.numTask2RMu1.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numTask2RMu1.Name = "numTask2RMu1";
-            this.numTask2RMu1.Size = new System.Drawing.Size(42, 20);
-            this.numTask2RMu1.TabIndex = 14;
-            this.toolTip.SetToolTip(this.numTask2RMu1, "Mu value");
-            this.numTask2RMu1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
@@ -770,7 +618,7 @@ namespace PatternRecognition
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.btnOpen, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.groupBox2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.grpboxTask1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupBox1, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -781,8 +629,31 @@ namespace PatternRecognition
             this.tableLayoutPanel3.Size = new System.Drawing.Size(908, 164);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.chkbxOpenGrayscale);
+            this.groupBox2.Controls.Add(this.btnOpen);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(388, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(132, 158);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            // 
+            // chkbxOpenGrayscale
+            // 
+            this.chkbxOpenGrayscale.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkbxOpenGrayscale.AutoSize = true;
+            this.chkbxOpenGrayscale.Location = new System.Drawing.Point(30, 109);
+            this.chkbxOpenGrayscale.Name = "chkbxOpenGrayscale";
+            this.chkbxOpenGrayscale.Size = new System.Drawing.Size(73, 17);
+            this.chkbxOpenGrayscale.TabIndex = 3;
+            this.chkbxOpenGrayscale.Text = "Grayscale";
+            this.chkbxOpenGrayscale.UseVisualStyleBackColor = true;
+            // 
             // grpboxTask1
             // 
+            this.grpboxTask1.Controls.Add(this.chkbxGenGrayscale);
             this.grpboxTask1.Controls.Add(this.numBSigma4);
             this.grpboxTask1.Controls.Add(this.numBMu4);
             this.grpboxTask1.Controls.Add(this.numBSigma3);
@@ -818,7 +689,18 @@ namespace PatternRecognition
             this.grpboxTask1.Size = new System.Drawing.Size(379, 158);
             this.grpboxTask1.TabIndex = 2;
             this.grpboxTask1.TabStop = false;
-            this.grpboxTask1.Text = "Task 1";
+            this.grpboxTask1.Text = "Generating";
+            // 
+            // chkbxGenGrayscale
+            // 
+            this.chkbxGenGrayscale.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkbxGenGrayscale.AutoSize = true;
+            this.chkbxGenGrayscale.Location = new System.Drawing.Point(246, 131);
+            this.chkbxGenGrayscale.Name = "chkbxGenGrayscale";
+            this.chkbxGenGrayscale.Size = new System.Drawing.Size(73, 17);
+            this.chkbxGenGrayscale.TabIndex = 30;
+            this.chkbxGenGrayscale.Text = "Grayscale";
+            this.chkbxGenGrayscale.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -873,35 +755,123 @@ namespace PatternRecognition
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtClass4Pixel3);
+            this.groupBox1.Controls.Add(this.txtClass4Pixel2);
+            this.groupBox1.Controls.Add(this.txtClass4Pixel1);
+            this.groupBox1.Controls.Add(this.txtClass3Pixel3);
+            this.groupBox1.Controls.Add(this.txtClass3Pixel2);
+            this.groupBox1.Controls.Add(this.txtClass3Pixel1);
+            this.groupBox1.Controls.Add(this.txtClass2Pixel3);
+            this.groupBox1.Controls.Add(this.txtClass2Pixel2);
+            this.groupBox1.Controls.Add(this.txtClass2Pixel1);
+            this.groupBox1.Controls.Add(this.txtClass1Pixel3);
+            this.groupBox1.Controls.Add(this.txtClass1Pixel2);
+            this.groupBox1.Controls.Add(this.txtClass1Pixel1);
             this.groupBox1.Controls.Add(this.btnGenerate2);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.numTask2RSigma4);
-            this.groupBox1.Controls.Add(this.numTask2RMu4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.numTask2RSigma3);
-            this.groupBox1.Controls.Add(this.numTask2RMu3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.numTask2RSigma2);
-            this.groupBox1.Controls.Add(this.numTask2RMu2);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.numTask2RSigma1);
-            this.groupBox1.Controls.Add(this.numTask2RMu1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(526, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(379, 158);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Task 2";
+            this.groupBox1.Text = "Classifying";
+            // 
+            // txtClass4Pixel3
+            // 
+            this.txtClass4Pixel3.Location = new System.Drawing.Point(275, 100);
+            this.txtClass4Pixel3.Name = "txtClass4Pixel3";
+            this.txtClass4Pixel3.Size = new System.Drawing.Size(86, 20);
+            this.txtClass4Pixel3.TabIndex = 42;
+            // 
+            // txtClass4Pixel2
+            // 
+            this.txtClass4Pixel2.Location = new System.Drawing.Point(183, 100);
+            this.txtClass4Pixel2.Name = "txtClass4Pixel2";
+            this.txtClass4Pixel2.Size = new System.Drawing.Size(86, 20);
+            this.txtClass4Pixel2.TabIndex = 41;
+            // 
+            // txtClass4Pixel1
+            // 
+            this.txtClass4Pixel1.Location = new System.Drawing.Point(91, 100);
+            this.txtClass4Pixel1.Name = "txtClass4Pixel1";
+            this.txtClass4Pixel1.Size = new System.Drawing.Size(86, 20);
+            this.txtClass4Pixel1.TabIndex = 40;
+            // 
+            // txtClass3Pixel3
+            // 
+            this.txtClass3Pixel3.Location = new System.Drawing.Point(275, 75);
+            this.txtClass3Pixel3.Name = "txtClass3Pixel3";
+            this.txtClass3Pixel3.Size = new System.Drawing.Size(86, 20);
+            this.txtClass3Pixel3.TabIndex = 39;
+            // 
+            // txtClass3Pixel2
+            // 
+            this.txtClass3Pixel2.Location = new System.Drawing.Point(183, 75);
+            this.txtClass3Pixel2.Name = "txtClass3Pixel2";
+            this.txtClass3Pixel2.Size = new System.Drawing.Size(86, 20);
+            this.txtClass3Pixel2.TabIndex = 38;
+            // 
+            // txtClass3Pixel1
+            // 
+            this.txtClass3Pixel1.Location = new System.Drawing.Point(91, 75);
+            this.txtClass3Pixel1.Name = "txtClass3Pixel1";
+            this.txtClass3Pixel1.Size = new System.Drawing.Size(86, 20);
+            this.txtClass3Pixel1.TabIndex = 37;
+            // 
+            // txtClass2Pixel3
+            // 
+            this.txtClass2Pixel3.Location = new System.Drawing.Point(275, 49);
+            this.txtClass2Pixel3.Name = "txtClass2Pixel3";
+            this.txtClass2Pixel3.Size = new System.Drawing.Size(86, 20);
+            this.txtClass2Pixel3.TabIndex = 36;
+            // 
+            // txtClass2Pixel2
+            // 
+            this.txtClass2Pixel2.Location = new System.Drawing.Point(183, 49);
+            this.txtClass2Pixel2.Name = "txtClass2Pixel2";
+            this.txtClass2Pixel2.Size = new System.Drawing.Size(86, 20);
+            this.txtClass2Pixel2.TabIndex = 35;
+            // 
+            // txtClass2Pixel1
+            // 
+            this.txtClass2Pixel1.Location = new System.Drawing.Point(91, 49);
+            this.txtClass2Pixel1.Name = "txtClass2Pixel1";
+            this.txtClass2Pixel1.Size = new System.Drawing.Size(86, 20);
+            this.txtClass2Pixel1.TabIndex = 34;
+            // 
+            // txtClass1Pixel3
+            // 
+            this.txtClass1Pixel3.Location = new System.Drawing.Point(275, 22);
+            this.txtClass1Pixel3.Name = "txtClass1Pixel3";
+            this.txtClass1Pixel3.Size = new System.Drawing.Size(86, 20);
+            this.txtClass1Pixel3.TabIndex = 33;
+            // 
+            // txtClass1Pixel2
+            // 
+            this.txtClass1Pixel2.Location = new System.Drawing.Point(183, 22);
+            this.txtClass1Pixel2.Name = "txtClass1Pixel2";
+            this.txtClass1Pixel2.Size = new System.Drawing.Size(86, 20);
+            this.txtClass1Pixel2.TabIndex = 32;
+            // 
+            // txtClass1Pixel1
+            // 
+            this.txtClass1Pixel1.Location = new System.Drawing.Point(91, 22);
+            this.txtClass1Pixel1.Name = "txtClass1Pixel1";
+            this.txtClass1Pixel1.Size = new System.Drawing.Size(86, 20);
+            this.txtClass1Pixel1.TabIndex = 31;
             // 
             // btnGenerate2
             // 
             this.btnGenerate2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGenerate2.Location = new System.Drawing.Point(150, 125);
+            this.btnGenerate2.Location = new System.Drawing.Point(148, 125);
             this.btnGenerate2.Name = "btnGenerate2";
             this.btnGenerate2.Size = new System.Drawing.Size(100, 26);
             this.btnGenerate2.TabIndex = 30;
-            this.btnGenerate2.Text = "Generate Image";
+            this.btnGenerate2.Text = "Classify Image";
             this.btnGenerate2.UseVisualStyleBackColor = true;
             this.btnGenerate2.Click += new System.EventHandler(this.btnGenerate2_Click);
             // 
@@ -1028,16 +998,10 @@ namespace PatternRecognition
             ((System.ComponentModel.ISupportInitialize)(this.numBMu2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBSigma1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBMu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RSigma1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTask2RMu1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.grpboxTask1.ResumeLayout(false);
             this.grpboxTask1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1091,18 +1055,25 @@ namespace PatternRecognition
         private System.Windows.Forms.NumericUpDown numGMu1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numTask2RSigma4;
-        private System.Windows.Forms.NumericUpDown numTask2RMu4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numTask2RSigma3;
-        private System.Windows.Forms.NumericUpDown numTask2RMu3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numTask2RSigma2;
-        private System.Windows.Forms.NumericUpDown numTask2RMu2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numTask2RSigma1;
-        private System.Windows.Forms.NumericUpDown numTask2RMu1;
         private System.Windows.Forms.Button btnGenerate2;
+        private System.Windows.Forms.TextBox txtClass4Pixel3;
+        private System.Windows.Forms.TextBox txtClass4Pixel2;
+        private System.Windows.Forms.TextBox txtClass4Pixel1;
+        private System.Windows.Forms.TextBox txtClass3Pixel3;
+        private System.Windows.Forms.TextBox txtClass3Pixel2;
+        private System.Windows.Forms.TextBox txtClass3Pixel1;
+        private System.Windows.Forms.TextBox txtClass2Pixel3;
+        private System.Windows.Forms.TextBox txtClass2Pixel2;
+        private System.Windows.Forms.TextBox txtClass2Pixel1;
+        private System.Windows.Forms.TextBox txtClass1Pixel3;
+        private System.Windows.Forms.TextBox txtClass1Pixel2;
+        private System.Windows.Forms.TextBox txtClass1Pixel1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox chkbxOpenGrayscale;
+        private System.Windows.Forms.CheckBox chkbxGenGrayscale;
     }
 }
 
