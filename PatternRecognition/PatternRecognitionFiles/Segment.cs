@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
+using System.Data;
 
 namespace PatternRecognition
 {
@@ -10,11 +11,30 @@ namespace PatternRecognition
         private Class[] classes;
         private Bitmap img;
         private Bitmap res;
-        public Segment(Class [] classes,Bitmap img)
+        private double[,] lamda;
+        private DataTable table;
+        private double[] accuracy;
+        private double overallAcc;
+        public Segment(Class [] classes,Bitmap img,double[,] lamda)
         {
             this.classes = classes;
             this.img = img;
+            this.lamda = lamda;
+            table = new DataTable("confusion matrix");
+            accuracy = new double[4];
+            overallAcc = 0;
+            Setup();
             Calc();
+        }
+
+        private void Setup()
+        {
+            table.Columns.Add("Class#");
+            table.Columns.Add("Class 1");
+            table.Columns.Add("Class 2");
+            table.Columns.Add("Class 3");
+            table.Columns.Add("Class 4");
+            table.Columns.Add("rejected");
         }
 
         private void Calc()
@@ -28,7 +48,11 @@ namespace PatternRecognition
             double[] pxsw = new double[length];
             double[] pwx = new double[length];
             double[] risk = new double[actions];
-            double[,] lamda = new double[,] { { 1, 2, 2, 2 }, { 2, 1, 2, 2 }, { 2, 2, 1, 2 }, { 2, 2, 2, 1 }, { 2, 2, 2, 2 } };
+            double len = img.Width / 4;
+            double [,] mat = new double[4, 5];
+            
+            DataRow dr;
+           // double[,] lamda = new double[,] { { 1, 2, 2, 2 }, { 2, 1, 2, 2 }, { 2, 2, 1, 2 }, { 2, 2, 2, 1 }, { 2, 2, 2, 2 } };
             double Px = 0;
             for(int i=0;i<img.Width;i++)
                 for(int j=0;j<img.Height;j++)
@@ -58,11 +82,33 @@ namespace PatternRecognition
                         risk[k] = sum;
                 }   
                     index = Array.IndexOf(risk,Min(risk));
+                    if (i < len)
+                        mat[0, index]++;
+                    else if (i < 2 * len)
+                        mat[1, index]++;
+                    else if (i < 3 * len)
+                        mat[2, index]++;
+                    else
+                        mat[3, index]++;
                     if(index==4)
                         res.SetPixel(i, j, Color.Black);
                     else
                         res.SetPixel(i, j, classes[index].color);
                 }
+            for (int i = 0; i < 4; i++)
+            {
+                dr = table.NewRow();
+                dr[0] = "Class "+(i+1).ToString();
+                dr[1] = mat[i, 0];
+                dr[2] = mat[i, 1];
+                dr[3] = mat[i, 2];
+                dr[4] = mat[i, 3];
+                dr[5] = mat[i, 4];
+                accuracy[i] = mat[i, 0] + mat[i, 1] + mat[i, 2] + mat[i, 3]+mat[i,4];
+                accuracy[i] /= mat[i, i];
+                overallAcc += accuracy[i];
+                table.Rows.Add(dr);
+            }
         }
 
         private double Max(double[] arr)
@@ -84,6 +130,18 @@ namespace PatternRecognition
         public Bitmap getResult()
         {
             return res;
+        }
+        public DataTable getTable()
+        {
+            return table;
+        }
+        public double[] getAccuracy()
+        {
+            return accuracy;
+        }
+        public double getOverallAccuracy()
+        {
+            return overallAcc;
         }
     }
 }

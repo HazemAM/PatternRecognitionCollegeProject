@@ -178,7 +178,7 @@ namespace PatternRecognition
                 Class class4 = new Class(new double[]{mu4r,mu4g,mu4b}, new double[]{sigma4r,sigma4g,sigma4b}, Color.Cyan);
 
                 //CLASSIFY THE IMAGE (PHEW!):
-                rightPictureBox.Image = new Segment(new Class[]{class1,class2,class3,class4}, theBitmapImage).getResult();
+               // rightPictureBox.Image = new Segment(new Class[]{class1,class2,class3,class4}, theBitmapImage).getResult();
 
             //} catch(Exception exp){
             //    MessageBox.Show("Something went wrong. Make sure you enter color values correctly.\n\n(Technically: "+exp.Message+")",
