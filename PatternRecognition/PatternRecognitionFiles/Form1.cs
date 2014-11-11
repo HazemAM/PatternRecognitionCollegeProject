@@ -123,62 +123,111 @@ namespace PatternRecognition
             }
 
             //try{
-                String[] temp;
+            String[] temp;
 
-                //GETTING INPUT AND CONVERTING TO NUMBERS:
-                temp = txtClass1Pixel1.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c1p1 = Array.ConvertAll(temp, double.Parse); //class 1, pixel 1
-                temp = txtClass1Pixel2.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c1p2 = Array.ConvertAll(temp, double.Parse);
-                temp = txtClass1Pixel3.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c1p3 = Array.ConvertAll(temp, double.Parse);
+            //GETTING INPUT AND CONVERTING TO NUMBERS:
+            temp = txtClass1.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            double[][] class1pixels = new double[temp.Length][];
+            for(int i=0; i<temp.Length; i++){
+                String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
+                class1pixels[i] = Array.ConvertAll(splitTemp, double.Parse);
+            }
 
-                temp = txtClass2Pixel1.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c2p1 = Array.ConvertAll(temp, double.Parse); //class 2, pixel 1
-                temp = txtClass2Pixel2.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c2p2 = Array.ConvertAll(temp, double.Parse);
-                temp = txtClass2Pixel3.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c2p3 = Array.ConvertAll(temp, double.Parse);
+            temp = txtClass2.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            double[][] class2pixels = new double[temp.Length][];
+            for(int i=0; i<temp.Length; i++){
+                String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
+                class2pixels[i] = Array.ConvertAll(splitTemp, double.Parse);
+            }
 
-                temp = txtClass3Pixel1.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c3p1 = Array.ConvertAll(temp, double.Parse); //class 3, pixel 1
-                temp = txtClass3Pixel2.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c3p2 = Array.ConvertAll(temp, double.Parse);
-                temp = txtClass3Pixel3.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c3p3 = Array.ConvertAll(temp, double.Parse);
+            temp = txtClass3.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            double[][] class3pixels = new double[temp.Length][];
+            for(int i=0; i<temp.Length; i++){
+                String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
+                class3pixels[i] = Array.ConvertAll(splitTemp, double.Parse);
+            }
 
-                temp = txtClass4Pixel1.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c4p1 = Array.ConvertAll(temp, double.Parse); //class 4, pixel 1
-                temp = txtClass4Pixel2.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c4p2 = Array.ConvertAll(temp, double.Parse);
-                temp = txtClass4Pixel3.Text.Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
-                double[] c4p3 = Array.ConvertAll(temp, double.Parse);
+            temp = txtClass4.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            double[][] class4pixels = new double[temp.Length][];
+            for(int i=0; i<temp.Length; i++){
+                String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
+                class4pixels[i] = Array.ConvertAll(splitTemp, double.Parse);
+            }
 
-                //COMPUTE MU AND SIGMA FOR EACH COLOR OF CLASS OF 4:
-                double mu1r = (c1p1[0]+c1p2[0]+c1p3[0])/3; double sigma1r = (Math.Pow(c1p1[0]-mu1r,2)+Math.Pow(c1p2[0]-mu1r,2)+Math.Pow(c1p3[0]-mu1r,2)) / 3;
-                double mu1g = (c1p1[1]+c1p2[1]+c1p3[1])/3; double sigma1g = (Math.Pow(c1p1[1]-mu1g,2)+Math.Pow(c1p2[1]-mu1g,2)+Math.Pow(c1p3[1]-mu1g,2)) / 3;
-                double mu1b = (c1p1[2]+c1p2[2]+c1p3[2])/3; double sigma1b = (Math.Pow(c1p1[2]-mu1b,2)+Math.Pow(c1p2[2]-mu1b,2)+Math.Pow(c1p3[2]-mu1b,2)) / 3;
+            //check number of pixels in every class:
+            if(class1pixels.GetLength(0)!=class2pixels.GetLength(0) ||
+               class1pixels.GetLength(0)!=class3pixels.GetLength(0) ||
+               class2pixels.GetLength(0)!=class3pixels.GetLength(0)){
+                MessageBox.Show("Enter same number of samples (pixels) per class.",
+                        "That's Not Fair", MessageBoxButtons.OK);
+                return;
+            }
 
-                double mu2r = (c2p1[0]+c2p2[0]+c2p3[0])/3; double sigma2r = (Math.Pow(c2p1[0]-mu2r,2)+Math.Pow(c2p2[0]-mu2r,2)+Math.Pow(c2p3[0]-mu2r,2)) / 3;
-                double mu2g = (c2p1[1]+c2p2[1]+c2p3[1])/3; double sigma2g = (Math.Pow(c2p1[1]-mu2g,2)+Math.Pow(c2p2[1]-mu2g,2)+Math.Pow(c2p3[1]-mu2g,2)) / 3;
-                double mu2b = (c2p1[2]+c2p2[2]+c2p3[2])/3; double sigma2b = (Math.Pow(c2p1[2]-mu2b,2)+Math.Pow(c2p2[2]-mu2b,2)+Math.Pow(c2p3[2]-mu2b,2)) / 3;
 
-                double mu3r = (c3p1[0]+c3p2[0]+c3p3[0])/3; double sigma3r = (Math.Pow(c3p1[0]-mu3r,2)+Math.Pow(c3p2[0]-mu3r,2)+Math.Pow(c3p3[0]-mu3r,2)) / 3;
-                double mu3g = (c3p1[1]+c3p2[1]+c3p3[1])/3; double sigma3g = (Math.Pow(c3p1[1]-mu3g,2)+Math.Pow(c3p2[1]-mu3g,2)+Math.Pow(c3p3[1]-mu3g,2)) / 3;
-                double mu3b = (c3p1[2]+c3p2[2]+c3p3[2])/3; double sigma3b = (Math.Pow(c3p1[2]-mu3b,2)+Math.Pow(c3p2[2]-mu3b,2)+Math.Pow(c3p3[2]-mu3b,2)) / 3;
+            //COMPUTE MU AND SIGMA FOR EACH COLOR OF CLASS OF 4:
+            double[,] mean = new double[4,3];
+            for(int i=0; i<class1pixels.GetLength(0); i++){
+                double fraction = (1/(double)class1pixels.GetLength(0));
+                mean[0,0] += fraction*class1pixels[i][0];
+                mean[0,1] += fraction*class1pixels[i][1];
+                mean[0,2] += fraction*class1pixels[i][2];
 
-                double mu4r = (c4p1[0]+c4p2[0]+c4p3[0])/3; double sigma4r = (Math.Pow(c4p1[0]-mu4r,2)+Math.Pow(c4p2[0]-mu4r,2)+Math.Pow(c4p3[0]-mu4r,2)) / 3;
-                double mu4g = (c4p1[1]+c4p2[1]+c4p3[1])/3; double sigma4g = (Math.Pow(c4p1[1]-mu4g,2)+Math.Pow(c4p2[1]-mu4g,2)+Math.Pow(c4p3[1]-mu4g,2)) / 3;
-                double mu4b = (c4p1[2]+c4p2[2]+c4p3[2])/3; double sigma4b = (Math.Pow(c4p1[2]-mu4b,2)+Math.Pow(c4p2[2]-mu4b,2)+Math.Pow(c4p3[2]-mu4b,2)) / 3;;
+                mean[1,0] += fraction*class2pixels[i][0];
+                mean[1,1] += fraction*class2pixels[i][1];
+                mean[1,2] += fraction*class2pixels[i][2];
 
-                //DEFINE THE 4 CLASSES:
-                Class class1 = new Class(new double[]{mu1r,mu1g,mu1b}, new double[]{sigma1r,sigma1g,sigma1b}, Color.Red);
-                Class class2 = new Class(new double[]{mu2r,mu2g,mu2b}, new double[]{sigma2r,sigma2g,sigma2b}, Color.Green);
-                Class class3 = new Class(new double[]{mu3r,mu3g,mu3b}, new double[]{sigma3r,sigma3g,sigma3b}, Color.Blue);
-                Class class4 = new Class(new double[]{mu4r,mu4g,mu4b}, new double[]{sigma4r,sigma4g,sigma4b}, Color.Cyan);
+                mean[2,0] += fraction*class3pixels[i][0];
+                mean[2,1] += fraction*class3pixels[i][1];
+                mean[2,2] += fraction*class3pixels[i][2];
 
-                //CLASSIFY THE IMAGE (PHEW!):
-               // rightPictureBox.Image = new Segment(new Class[]{class1,class2,class3,class4}, theBitmapImage).getResult();
+                mean[3,0] += fraction*class4pixels[i][0];
+                mean[3,1] += fraction*class4pixels[i][1];
+                mean[3,2] += fraction*class4pixels[i][2];
+            }
+
+            double[,] sigma = new double[4,3];
+            for(int i=0; i<class1pixels.GetLength(0); i++){
+                double fraction = (1/(double)class1pixels.GetLength(0));
+                sigma[0,0] += fraction*Math.Pow(class1pixels[i][0]-mean[0,0],2);
+                sigma[0,1] += fraction*Math.Pow(class1pixels[i][1]-mean[0,1],2);
+                sigma[0,2] += fraction*Math.Pow(class1pixels[i][2]-mean[0,2],2);
+
+                sigma[1,0] += fraction*Math.Pow(class2pixels[i][0]-mean[1,0],2);
+                sigma[1,1] += fraction*Math.Pow(class2pixels[i][1]-mean[1,1],2);
+                sigma[1,2] += fraction*Math.Pow(class2pixels[i][2]-mean[1,2],2);
+
+                sigma[2,0] += fraction*Math.Pow(class3pixels[i][0]-mean[2,0],2);
+                sigma[2,1] += fraction*Math.Pow(class3pixels[i][1]-mean[2,1],2);
+                sigma[2,2] += fraction*Math.Pow(class3pixels[i][2]-mean[2,2],2);
+
+                sigma[3,0] += fraction*Math.Pow(class4pixels[i][0]-mean[3,0],2);
+                sigma[3,1] += fraction*Math.Pow(class4pixels[i][1]-mean[3,1],2);
+                sigma[3,2] += fraction*Math.Pow(class4pixels[i][2]-mean[3,2],2);
+            }
+
+            //GETTING LAMBDAS:
+            double[][] lambda = new double[5][];
+            if(txtLambda.Text.ToString()!="" && txtLambda.Text.ToString()!=null){
+                temp = txtLambda.Text.Split(new String[]{Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries);
+                for(int i=0; i<lambda.GetLength(0); i++){
+                    String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
+                    lambda[i] = Array.ConvertAll(splitTemp, double.Parse);
+                }
+            }
+            else //initialize by zeros if no input:
+                for(int i=0; i<lambda.GetLength(0); i++)
+                    lambda[i] = new double[]{0,0,0,0};
+
+            //DEFINE THE 4 CLASSES:
+            Class class1 = new Class(new double[]{mean[0,0],mean[0,1],mean[0,2]}, new double[]{sigma[0,0],sigma[0,1],sigma[0,2]}, Color.Red);
+            Class class2 = new Class(new double[]{mean[1,0],mean[1,1],mean[1,2]}, new double[]{sigma[1,0],sigma[1,1],sigma[1,2]}, Color.Green);
+            Class class3 = new Class(new double[]{mean[2,0],mean[2,1],mean[2,2]}, new double[]{sigma[2,0],sigma[2,1],sigma[2,2]}, Color.Blue);
+            Class class4 = new Class(new double[]{mean[3,0],mean[3,1],mean[3,2]}, new double[]{sigma[3,0],sigma[3,1],sigma[3,2]}, Color.Cyan);
+
+            //CLASSIFY THE IMAGE (PHEW!):
+            Segment segment = new Segment(new Class[]{class1,class2,class3,class4}, theBitmapImage, lambda);
+            rightPictureBox.Image = segment.getResult();
+            new TableForm(segment.getTable()).ShowDialog();
 
             //} catch(Exception exp){
             //    MessageBox.Show("Something went wrong. Make sure you enter color values correctly.\n\n(Technically: "+exp.Message+")",
@@ -205,26 +254,20 @@ namespace PatternRecognition
         private void leftPictureBox_MouseClick(object sender, MouseEventArgs e)
         {
             TextBox input = null;
-                 if(txtClass1Pixel1.Focused) input=txtClass1Pixel1;
-            else if(txtClass1Pixel2.Focused) input=txtClass1Pixel2;
-            else if(txtClass1Pixel3.Focused) input=txtClass1Pixel3;
-
-            else if(txtClass2Pixel1.Focused) input=txtClass2Pixel1;
-            else if(txtClass2Pixel2.Focused) input=txtClass2Pixel2;
-            else if(txtClass2Pixel3.Focused) input=txtClass2Pixel3;
-
-            else if(txtClass3Pixel1.Focused) input=txtClass3Pixel1;
-            else if(txtClass3Pixel2.Focused) input=txtClass3Pixel2;
-            else if(txtClass3Pixel3.Focused) input=txtClass3Pixel3;
-
-            else if(txtClass4Pixel1.Focused) input=txtClass4Pixel1;
-            else if(txtClass4Pixel2.Focused) input=txtClass4Pixel2;
-            else if(txtClass4Pixel3.Focused) input=txtClass4Pixel3;
+                 if(txtClass1.Focused) input=txtClass1;
+            else if(txtClass2.Focused) input=txtClass2;
+            else if(txtClass3.Focused) input=txtClass3;
+            else if(txtClass4.Focused) input=txtClass4;
 
             try{
-                if(input!=null) input.Text = (theBitmapImage.GetPixel(e.X,e.Y).R.ToString()+" "+
-                                              theBitmapImage.GetPixel(e.X,e.Y).G.ToString()+" "+
-                                              theBitmapImage.GetPixel(e.X,e.Y).B.ToString());
+                if(input!=null){
+                    String text = "";
+                    if(input.Text!="") text=", ";
+                    text += (theBitmapImage.GetPixel(e.X,e.Y).R.ToString()+" "+
+                             theBitmapImage.GetPixel(e.X,e.Y).G.ToString()+" "+
+                             theBitmapImage.GetPixel(e.X,e.Y).B.ToString());
+                    input.Text += text;
+                }
             } catch(ArgumentOutOfRangeException){ /*Pixel out of image dimensions.*/ }
 
             /***TESTING***/

@@ -68,18 +68,11 @@ namespace PatternRecognition
             this.labelRed = new System.Windows.Forms.Label();
             this.btnGenerate1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtClass4Pixel3 = new System.Windows.Forms.TextBox();
-            this.txtClass4Pixel2 = new System.Windows.Forms.TextBox();
-            this.txtClass4Pixel1 = new System.Windows.Forms.TextBox();
-            this.txtClass3Pixel3 = new System.Windows.Forms.TextBox();
-            this.txtClass3Pixel2 = new System.Windows.Forms.TextBox();
-            this.txtClass3Pixel1 = new System.Windows.Forms.TextBox();
-            this.txtClass2Pixel3 = new System.Windows.Forms.TextBox();
-            this.txtClass2Pixel2 = new System.Windows.Forms.TextBox();
-            this.txtClass2Pixel1 = new System.Windows.Forms.TextBox();
-            this.txtClass1Pixel3 = new System.Windows.Forms.TextBox();
-            this.txtClass1Pixel2 = new System.Windows.Forms.TextBox();
-            this.txtClass1Pixel1 = new System.Windows.Forms.TextBox();
+            this.txtLambda = new System.Windows.Forms.TextBox();
+            this.txtClass4 = new System.Windows.Forms.TextBox();
+            this.txtClass3 = new System.Windows.Forms.TextBox();
+            this.txtClass2 = new System.Windows.Forms.TextBox();
+            this.txtClass1 = new System.Windows.Forms.TextBox();
             this.btnGenerate2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -755,18 +748,11 @@ namespace PatternRecognition
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtClass4Pixel3);
-            this.groupBox1.Controls.Add(this.txtClass4Pixel2);
-            this.groupBox1.Controls.Add(this.txtClass4Pixel1);
-            this.groupBox1.Controls.Add(this.txtClass3Pixel3);
-            this.groupBox1.Controls.Add(this.txtClass3Pixel2);
-            this.groupBox1.Controls.Add(this.txtClass3Pixel1);
-            this.groupBox1.Controls.Add(this.txtClass2Pixel3);
-            this.groupBox1.Controls.Add(this.txtClass2Pixel2);
-            this.groupBox1.Controls.Add(this.txtClass2Pixel1);
-            this.groupBox1.Controls.Add(this.txtClass1Pixel3);
-            this.groupBox1.Controls.Add(this.txtClass1Pixel2);
-            this.groupBox1.Controls.Add(this.txtClass1Pixel1);
+            this.groupBox1.Controls.Add(this.txtLambda);
+            this.groupBox1.Controls.Add(this.txtClass4);
+            this.groupBox1.Controls.Add(this.txtClass3);
+            this.groupBox1.Controls.Add(this.txtClass2);
+            this.groupBox1.Controls.Add(this.txtClass1);
             this.groupBox1.Controls.Add(this.btnGenerate2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -780,101 +766,46 @@ namespace PatternRecognition
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Classifying";
             // 
-            // txtClass4Pixel3
+            // txtLambda
             // 
-            this.txtClass4Pixel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass4Pixel3.Location = new System.Drawing.Point(276, 100);
-            this.txtClass4Pixel3.Name = "txtClass4Pixel3";
-            this.txtClass4Pixel3.Size = new System.Drawing.Size(86, 20);
-            this.txtClass4Pixel3.TabIndex = 42;
+            this.txtLambda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtLambda.Location = new System.Drawing.Point(253, 22);
+            this.txtLambda.Multiline = true;
+            this.txtLambda.Name = "txtLambda";
+            this.txtLambda.Size = new System.Drawing.Size(111, 98);
+            this.txtLambda.TabIndex = 41;
             // 
-            // txtClass4Pixel2
+            // txtClass4
             // 
-            this.txtClass4Pixel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass4Pixel2.Location = new System.Drawing.Point(184, 100);
-            this.txtClass4Pixel2.Name = "txtClass4Pixel2";
-            this.txtClass4Pixel2.Size = new System.Drawing.Size(86, 20);
-            this.txtClass4Pixel2.TabIndex = 41;
+            this.txtClass4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass4.Location = new System.Drawing.Point(92, 100);
+            this.txtClass4.Name = "txtClass4";
+            this.txtClass4.Size = new System.Drawing.Size(155, 20);
+            this.txtClass4.TabIndex = 40;
             // 
-            // txtClass4Pixel1
+            // txtClass3
             // 
-            this.txtClass4Pixel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass4Pixel1.Location = new System.Drawing.Point(92, 100);
-            this.txtClass4Pixel1.Name = "txtClass4Pixel1";
-            this.txtClass4Pixel1.Size = new System.Drawing.Size(86, 20);
-            this.txtClass4Pixel1.TabIndex = 40;
+            this.txtClass3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass3.Location = new System.Drawing.Point(92, 75);
+            this.txtClass3.Name = "txtClass3";
+            this.txtClass3.Size = new System.Drawing.Size(155, 20);
+            this.txtClass3.TabIndex = 37;
             // 
-            // txtClass3Pixel3
+            // txtClass2
             // 
-            this.txtClass3Pixel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass3Pixel3.Location = new System.Drawing.Point(276, 75);
-            this.txtClass3Pixel3.Name = "txtClass3Pixel3";
-            this.txtClass3Pixel3.Size = new System.Drawing.Size(86, 20);
-            this.txtClass3Pixel3.TabIndex = 39;
+            this.txtClass2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass2.Location = new System.Drawing.Point(92, 49);
+            this.txtClass2.Name = "txtClass2";
+            this.txtClass2.Size = new System.Drawing.Size(155, 20);
+            this.txtClass2.TabIndex = 34;
             // 
-            // txtClass3Pixel2
+            // txtClass1
             // 
-            this.txtClass3Pixel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass3Pixel2.Location = new System.Drawing.Point(184, 75);
-            this.txtClass3Pixel2.Name = "txtClass3Pixel2";
-            this.txtClass3Pixel2.Size = new System.Drawing.Size(86, 20);
-            this.txtClass3Pixel2.TabIndex = 38;
-            // 
-            // txtClass3Pixel1
-            // 
-            this.txtClass3Pixel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass3Pixel1.Location = new System.Drawing.Point(92, 75);
-            this.txtClass3Pixel1.Name = "txtClass3Pixel1";
-            this.txtClass3Pixel1.Size = new System.Drawing.Size(86, 20);
-            this.txtClass3Pixel1.TabIndex = 37;
-            // 
-            // txtClass2Pixel3
-            // 
-            this.txtClass2Pixel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass2Pixel3.Location = new System.Drawing.Point(276, 49);
-            this.txtClass2Pixel3.Name = "txtClass2Pixel3";
-            this.txtClass2Pixel3.Size = new System.Drawing.Size(86, 20);
-            this.txtClass2Pixel3.TabIndex = 36;
-            // 
-            // txtClass2Pixel2
-            // 
-            this.txtClass2Pixel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass2Pixel2.Location = new System.Drawing.Point(184, 49);
-            this.txtClass2Pixel2.Name = "txtClass2Pixel2";
-            this.txtClass2Pixel2.Size = new System.Drawing.Size(86, 20);
-            this.txtClass2Pixel2.TabIndex = 35;
-            // 
-            // txtClass2Pixel1
-            // 
-            this.txtClass2Pixel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass2Pixel1.Location = new System.Drawing.Point(92, 49);
-            this.txtClass2Pixel1.Name = "txtClass2Pixel1";
-            this.txtClass2Pixel1.Size = new System.Drawing.Size(86, 20);
-            this.txtClass2Pixel1.TabIndex = 34;
-            // 
-            // txtClass1Pixel3
-            // 
-            this.txtClass1Pixel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass1Pixel3.Location = new System.Drawing.Point(276, 22);
-            this.txtClass1Pixel3.Name = "txtClass1Pixel3";
-            this.txtClass1Pixel3.Size = new System.Drawing.Size(86, 20);
-            this.txtClass1Pixel3.TabIndex = 33;
-            // 
-            // txtClass1Pixel2
-            // 
-            this.txtClass1Pixel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass1Pixel2.Location = new System.Drawing.Point(184, 22);
-            this.txtClass1Pixel2.Name = "txtClass1Pixel2";
-            this.txtClass1Pixel2.Size = new System.Drawing.Size(86, 20);
-            this.txtClass1Pixel2.TabIndex = 32;
-            // 
-            // txtClass1Pixel1
-            // 
-            this.txtClass1Pixel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtClass1Pixel1.Location = new System.Drawing.Point(92, 22);
-            this.txtClass1Pixel1.Name = "txtClass1Pixel1";
-            this.txtClass1Pixel1.Size = new System.Drawing.Size(86, 20);
-            this.txtClass1Pixel1.TabIndex = 31;
+            this.txtClass1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtClass1.Location = new System.Drawing.Point(92, 22);
+            this.txtClass1.Name = "txtClass1";
+            this.txtClass1.Size = new System.Drawing.Size(155, 20);
+            this.txtClass1.TabIndex = 31;
             // 
             // btnGenerate2
             // 
@@ -1071,21 +1002,14 @@ namespace PatternRecognition
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnGenerate2;
-        private System.Windows.Forms.TextBox txtClass4Pixel3;
-        private System.Windows.Forms.TextBox txtClass4Pixel2;
-        private System.Windows.Forms.TextBox txtClass4Pixel1;
-        private System.Windows.Forms.TextBox txtClass3Pixel3;
-        private System.Windows.Forms.TextBox txtClass3Pixel2;
-        private System.Windows.Forms.TextBox txtClass3Pixel1;
-        private System.Windows.Forms.TextBox txtClass2Pixel3;
-        private System.Windows.Forms.TextBox txtClass2Pixel2;
-        private System.Windows.Forms.TextBox txtClass2Pixel1;
-        private System.Windows.Forms.TextBox txtClass1Pixel3;
-        private System.Windows.Forms.TextBox txtClass1Pixel2;
-        private System.Windows.Forms.TextBox txtClass1Pixel1;
+        private System.Windows.Forms.TextBox txtClass4;
+        private System.Windows.Forms.TextBox txtClass3;
+        private System.Windows.Forms.TextBox txtClass2;
+        private System.Windows.Forms.TextBox txtClass1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox chkbxOpenGrayscale;
         private System.Windows.Forms.CheckBox chkbxGenGrayscale;
+        private System.Windows.Forms.TextBox txtLambda;
     }
 }
 

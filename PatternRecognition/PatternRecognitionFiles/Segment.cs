@@ -11,16 +11,16 @@ namespace PatternRecognition
         private Class[] classes;
         private Bitmap img;
         private Bitmap res;
-        private double[,] lamda;
+        private double[][] lamda;
         private DataTable table;
         private double[] accuracy;
         private double overallAcc;
-        public Segment(Class [] classes,Bitmap img,double[,] lamda)
+        public Segment(Class [] classes,Bitmap img,double[][] lamda)
         {
             this.classes = classes;
             this.img = img;
             this.lamda = lamda;
-            table = new DataTable("confusion matrix");
+            table = new DataTable("Confusion Matrix");
             accuracy = new double[4];
             overallAcc = 0;
             Setup();
@@ -34,7 +34,7 @@ namespace PatternRecognition
             table.Columns.Add("Class 2");
             table.Columns.Add("Class 3");
             table.Columns.Add("Class 4");
-            table.Columns.Add("rejected");
+            table.Columns.Add("REJECTED");
         }
 
         private void Calc()
@@ -52,7 +52,7 @@ namespace PatternRecognition
             double [,] mat = new double[4, 5];
             
             DataRow dr;
-           // double[,] lamda = new double[,] { { 1, 2, 2, 2 }, { 2, 1, 2, 2 }, { 2, 2, 1, 2 }, { 2, 2, 2, 1 }, { 2, 2, 2, 2 } };
+           // double[][] lamda = new double[][] { { 1, 2, 2, 2 }, { 2, 1, 2, 2 }, { 2, 2, 1, 2 }, { 2, 2, 2, 1 }, { 2, 2, 2, 2 } };
             double Px = 0;
             for(int i=0;i<img.Width;i++)
                 for(int j=0;j<img.Height;j++)
@@ -77,7 +77,7 @@ namespace PatternRecognition
                         double sum = 0;
                         for (int l = 0;l<length;l++)
                             {
-                                sum = sum + lamda[k,l] * pwx[l];
+                                sum = sum + lamda[k][l] * pwx[l];
                             }
                         risk[k] = sum;
                 }   
