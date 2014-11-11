@@ -774,6 +774,7 @@ namespace PatternRecognition
             this.txtLambda.Name = "txtLambda";
             this.txtLambda.Size = new System.Drawing.Size(111, 98);
             this.txtLambda.TabIndex = 41;
+            this.txtLambda.Text = "1 2 2 2\r\n2 1 2 2\r\n2 2 1 2\r\n2 2 2 1\r\n2 2 2 2";
             // 
             // txtClass4
             // 

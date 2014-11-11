@@ -157,14 +157,17 @@ namespace PatternRecognition
             //check number of pixels in every class:
             if(class1pixels.GetLength(0)!=class2pixels.GetLength(0) ||
                class1pixels.GetLength(0)!=class3pixels.GetLength(0) ||
-               class2pixels.GetLength(0)!=class3pixels.GetLength(0)){
+               class1pixels.GetLength(0)!=class4pixels.GetLength(0) ||
+               class2pixels.GetLength(0)!=class3pixels.GetLength(0) ||
+               class2pixels.GetLength(0)!=class4pixels.GetLength(0) ||
+               class3pixels.GetLength(0)!=class4pixels.GetLength(0) ){
                 MessageBox.Show("Enter same number of samples (pixels) per class.",
                         "That's Not Fair", MessageBoxButtons.OK);
                 return;
             }
 
 
-            //COMPUTE MU AND SIGMA FOR EACH COLOR OF CLASS OF 4:
+            //COMPUTE MU FOR EACH COLOR OF CLASS OF 4:
             double[,] mean = new double[4,3];
             for(int i=0; i<class1pixels.GetLength(0); i++){
                 double fraction = (1/(double)class1pixels.GetLength(0));
@@ -185,6 +188,8 @@ namespace PatternRecognition
                 mean[3,2] += fraction*class4pixels[i][2];
             }
 
+
+            //COMPUTE SIGMA FOR EACH COLOR OF CLASS OF 4:
             double[,] sigma = new double[4,3];
             for(int i=0; i<class1pixels.GetLength(0); i++){
                 double fraction = (1/(double)class1pixels.GetLength(0));
@@ -205,6 +210,15 @@ namespace PatternRecognition
                 sigma[3,2] += fraction*Math.Pow(class4pixels[i][2]-mean[3,2],2);
             }
 
+            for(int i=0; i<class1pixels.GetLength(0); i++)
+                for(int j=0; j<class1pixels.GetLength(0); j++)
+                    if(sigma[i,j]==0){
+                        MessageBox.Show("After calculations, one sigma value (at least) is equal to zero, which is not cool.\nChoose your pixels nicely.",
+                            "Sigma Cannot be Zero", MessageBoxButtons.OK);
+                        return;
+                    }
+
+
             //GETTING LAMBDAS:
             double[][] lambda = new double[5][];
             if(txtLambda.Text.ToString()!="" && txtLambda.Text.ToString()!=null){
@@ -218,6 +232,7 @@ namespace PatternRecognition
                 for(int i=0; i<lambda.GetLength(0); i++)
                     lambda[i] = new double[]{0,0,0,0};
 
+
             //DEFINE THE 4 CLASSES:
             Class class1 = new Class(new double[]{mean[0,0],mean[0,1],mean[0,2]}, new double[]{sigma[0,0],sigma[0,1],sigma[0,2]}, Color.Red);
             Class class2 = new Class(new double[]{mean[1,0],mean[1,1],mean[1,2]}, new double[]{sigma[1,0],sigma[1,1],sigma[1,2]}, Color.Green);
@@ -227,7 +242,7 @@ namespace PatternRecognition
             //CLASSIFY THE IMAGE (PHEW!):
             Segment segment = new Segment(new Class[]{class1,class2,class3,class4}, theBitmapImage, lambda);
             rightPictureBox.Image = segment.getResult();
-            new TableForm(segment.getTable()).ShowDialog();
+            new TableForm(segment.getTable(), segment.getAccuracy(), segment.getOverallAccuracy()).ShowDialog();
 
             //} catch(Exception exp){
             //    MessageBox.Show("Something went wrong. Make sure you enter color values correctly.\n\n(Technically: "+exp.Message+")",

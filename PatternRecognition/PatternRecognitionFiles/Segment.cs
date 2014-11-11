@@ -29,7 +29,7 @@ namespace PatternRecognition
 
         private void Setup()
         {
-            table.Columns.Add("Class#");
+            table.Columns.Add("Class vs. Action");
             table.Columns.Add("Class 1");
             table.Columns.Add("Class 2");
             table.Columns.Add("Class 3");
