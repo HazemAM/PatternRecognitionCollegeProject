@@ -15,10 +15,11 @@ namespace PatternRecognition
             InitializeComponent();
             confusionTable.DataSource = inputTable;
 
-            lblAccClass1.Text = Math.Round(accuracyArray[0],3).ToString();
-            lblAccClass2.Text = Math.Round(accuracyArray[1],3).ToString();
-            lblAccClass3.Text = Math.Round(accuracyArray[2],3).ToString();
-            lblAccClass4.Text = Math.Round(accuracyArray[3],3).ToString();
+            if(accuracyArray.Length>0) lblAccClass1.Text = Math.Round(accuracyArray[0],3).ToString();
+            if(accuracyArray.Length>1) lblAccClass2.Text = Math.Round(accuracyArray[1],3).ToString();
+            if(accuracyArray.Length>2) lblAccClass3.Text = Math.Round(accuracyArray[2],3).ToString();
+            if(accuracyArray.Length>3) lblAccClass4.Text = Math.Round(accuracyArray[3],3).ToString();
+            else{ lblAccClass4Title.Visible=false; lblAccClass4.Visible=false; }
 
             lblAccOverall.Text = Math.Round(accuracyOverall,3).ToString();
         }

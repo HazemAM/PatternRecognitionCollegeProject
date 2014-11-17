@@ -134,10 +134,10 @@ namespace PatternRecognition
             Irises[] res = new Irises[150];
             int count = 0;
             String line;
-            System.IO.StreamReader file = new System.IO.StreamReader("Iris Data.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader("../../Iris Data.txt");
             while ((line = file.ReadLine()) != null)
             {
-                if(line.StartsWith("x"))
+                if(line.StartsWith("X"))
                     continue;
                 String[] values = line.Split(',');
                 double[] x = { Double.Parse(values[0]), Double.Parse(values[1]), Double.Parse(values[2]), Double.Parse(values[3]) };
@@ -147,6 +147,18 @@ namespace PatternRecognition
                 count++;
             }
             return res;
+        }
+
+        public DataTable getTable(){
+            return table;
+        }
+
+        public double[] getAccuracyArray(){
+            return accuracy;
+        }
+
+        public double getOverallAccuracy(){
+            return overallAcc;
         }
     }
 }

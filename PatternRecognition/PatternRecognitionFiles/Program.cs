@@ -14,7 +14,12 @@ namespace PatternRecognition
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainForm());
+            //Application.Run(new mainForm());
+
+            Classify iris = new Classify();
+            iris.ClassifyIris();
+            TableForm irisForm = new TableForm(iris.getTable(), iris.getAccuracyArray(), iris.getOverallAccuracy());
+            Application.Run(irisForm);
         }
     }
 }
