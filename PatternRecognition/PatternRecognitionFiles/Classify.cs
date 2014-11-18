@@ -31,13 +31,13 @@ namespace PatternRecognition
             table.Columns.Add("Versicolor 2");
             table.Columns.Add("Virginica 3");
         }
-        private double Min(double[] arr)
+        private double Max(double[] arr)
         {
-            double min = 256;
+            double max = -5000;
             for (int i = 0; i < arr.Length; i++)
-                if (arr[i] < min)
-                    min = arr[i];
-            return min;
+                if (arr[i] > max)
+                    max = arr[i];
+            return max;
         }
         private void classify()
         {
@@ -52,8 +52,8 @@ namespace PatternRecognition
                 {
                     Gx[0] = Calc(0,i);
                     Gx[1] = Calc(1,i);
-                    Gx[2] = Calc(1,i);
-                    index=Array.IndexOf(Gx,Min(Gx));
+                    Gx[2] = Calc(2,i);
+                    index=Array.IndexOf(Gx,Max(Gx));
                     if (start < 50)
                         mat[0, index]++;
                     else if (start < 100)
@@ -69,11 +69,12 @@ namespace PatternRecognition
             for (int i = 0; i < 3; i++)
             {
                 dr = table.NewRow();
-                dr[0] = "Class " + (i + 1).ToString();
+                dr[0] = ((IrisesType)i).ToString();
                 dr[1] = mat[i, 0];
                 dr[2] = mat[i, 1];
+                dr[3] = mat[i, 2];
                 accuracy[i] = mat[i, 0] + mat[i, 1] + mat[i, 2];
-                accuracy[i] /= mat[i, i];
+                accuracy[i] = mat[i, i] / accuracy[i];
                 overallAcc += accuracy[i];
                 table.Rows.Add(dr);
             }
@@ -83,12 +84,17 @@ namespace PatternRecognition
         {
             double sum=0;
             double [] x=inp[index].x;
-            for(int i=0;i<3;++i)
-                sum += Math.Pow(x[i]-mu[type,i],2);
-            sum=Math.Sqrt(sum);
-                sum/=(2*Math.Pow(sigma[type,0],2));
-                sum+=Math.Log(1/3);
-                return sum;
+            double sig=0;
+            for (int i = 0; i < 4; ++i)
+            {
+                sum += Math.Pow(x[i] - mu[type, i], 2);
+                sig += Math.Pow(sigma[type, i], 2);
+            }
+            //sum=Math.Sqrt(sum);
+            sum /= ((Math.Pow(sig, 2)));
+            sum *= -1;
+            sum+=Math.Log(1.0/3.0);
+            return sum;
         }
 
         private void estimateMuSigma()
@@ -158,7 +164,7 @@ namespace PatternRecognition
         }
 
         public double getOverallAccuracy(){
-            return overallAcc;
+            return overallAcc/3;
         }
     }
 }
