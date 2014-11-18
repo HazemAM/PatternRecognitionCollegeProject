@@ -27,9 +27,9 @@ namespace PatternRecognition
         {
             table=new DataTable("Ireses Classification");
             table.Columns.Add("Type/Classfied AS");
-            table.Columns.Add("Setosa");
-            table.Columns.Add("Versicolor 2");
-            table.Columns.Add("Virginica 3");
+            table.Columns.Add("Setosa (1)");
+            table.Columns.Add("Versicolor (2)");
+            table.Columns.Add("Virginica (3)");
         }
         private double Max(double[] arr)
         {

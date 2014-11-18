@@ -81,7 +81,7 @@
             this.lblAccClass4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAccClass4.AutoSize = true;
             this.lblAccClass4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccClass4.Location = new System.Drawing.Point(181, 182);
+            this.lblAccClass4.Location = new System.Drawing.Point(149, 182);
             this.lblAccClass4.Name = "lblAccClass4";
             this.lblAccClass4.Size = new System.Drawing.Size(57, 13);
             this.lblAccClass4.TabIndex = 5;
@@ -94,16 +94,16 @@
             this.lblAccClass4Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccClass4Title.Location = new System.Drawing.Point(12, 182);
             this.lblAccClass4Title.Name = "lblAccClass4Title";
-            this.lblAccClass4Title.Size = new System.Drawing.Size(161, 13);
+            this.lblAccClass4Title.Size = new System.Drawing.Size(127, 13);
             this.lblAccClass4Title.TabIndex = 4;
-            this.lblAccClass4Title.Text = "Class Four/Cyan Accuracy:";
+            this.lblAccClass4Title.Text = "Class Four Accuracy:";
             // 
             // lblAccClass3
             // 
             this.lblAccClass3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAccClass3.AutoSize = true;
             this.lblAccClass3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccClass3.Location = new System.Drawing.Point(181, 166);
+            this.lblAccClass3.Location = new System.Drawing.Point(149, 166);
             this.lblAccClass3.Name = "lblAccClass3";
             this.lblAccClass3.Size = new System.Drawing.Size(57, 13);
             this.lblAccClass3.TabIndex = 7;
@@ -116,16 +116,16 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 166);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(166, 13);
+            this.label5.Size = new System.Drawing.Size(135, 13);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Class Three/Blue Accuracy:";
+            this.label5.Text = "Class Three Accuracy:";
             // 
             // lblAccClass2
             // 
             this.lblAccClass2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAccClass2.AutoSize = true;
             this.lblAccClass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccClass2.Location = new System.Drawing.Point(181, 150);
+            this.lblAccClass2.Location = new System.Drawing.Point(149, 150);
             this.lblAccClass2.Name = "lblAccClass2";
             this.lblAccClass2.Size = new System.Drawing.Size(57, 13);
             this.lblAccClass2.TabIndex = 9;
@@ -138,16 +138,16 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(12, 150);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 13);
+            this.label7.Size = new System.Drawing.Size(126, 13);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Class Two/Green Accuracy:";
+            this.label7.Text = "Class Two Accuracy:";
             // 
             // lblAccClass1
             // 
             this.lblAccClass1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAccClass1.AutoSize = true;
             this.lblAccClass1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAccClass1.Location = new System.Drawing.Point(181, 134);
+            this.lblAccClass1.Location = new System.Drawing.Point(149, 134);
             this.lblAccClass1.Name = "lblAccClass1";
             this.lblAccClass1.Size = new System.Drawing.Size(57, 13);
             this.lblAccClass1.TabIndex = 11;
@@ -160,9 +160,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(12, 134);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 13);
+            this.label9.Size = new System.Drawing.Size(125, 13);
             this.label9.TabIndex = 10;
-            this.label9.Text = "Class One/Red Accuracy:";
+            this.label9.Text = "Class One Accuracy:";
             // 
             // TableForm
             // 

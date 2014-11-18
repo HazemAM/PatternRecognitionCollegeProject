@@ -6,8 +6,8 @@ namespace PatternRecognition
 {
     enum IrisesType
     {
-        setosa=0,
-        versicolor=1,
-        virginica=2
+        Setosa=0,
+        Versicolor=1,
+        Virginica=2
     }
 }
