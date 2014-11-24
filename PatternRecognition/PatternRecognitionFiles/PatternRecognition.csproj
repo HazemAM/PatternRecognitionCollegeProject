@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Irises.cs" />
     <Compile Include="IrisesType.cs" />
+    <Compile Include="pars.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Segment.cs" />
