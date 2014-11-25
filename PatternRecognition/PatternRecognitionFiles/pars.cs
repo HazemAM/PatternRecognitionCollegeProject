@@ -16,6 +16,8 @@ namespace PatternRecognition
         private double overallAcc;
         private int win;
         private bool gen;
+        private int [] K;
+        private int n;
         public Pars(Class [] classes,Bitmap img,int win,bool gen)
         {
             this.classes = classes;
@@ -25,6 +27,7 @@ namespace PatternRecognition
             table = new DataTable("Confusion Matrix");
             accuracy = new double[4];
             overallAcc = 0;
+            n = 0;
             Setup();
             Calc();
         }
@@ -41,67 +44,71 @@ namespace PatternRecognition
         private void Calc()
         {
             int index;
-            Color temp;
             res=new Bitmap(img);
             int length=classes.Length;
-            double[,] pxw = new double[3,length];
-            double[] pxsw = new double[length];
-            double[] pwx = new double[length];
+            K = new int[length];
+            double[] re = new double[length];
             double len = img.Width / 4;
             double [,] mat = new double[length, length];
             DataRow dr;
-            double Px = 0;
             for(int i=0;i<img.Width;i++)
                 for(int j=0;j<img.Height;j++)
                 {
-                    temp=img.GetPixel(i,j);
-                    for (int k = 0; k < length; k++)
+                    re = getPest(i, j);
+                    index = Array.IndexOf(re,Max(re));
+                    if (gen)
                     {
-                        pxw[0,k] = getPest(0,k);
-                        pxw[1, k] = getPest(1, k);
-                        pxw[2, k] = getPest(2, k);
-                    }
-                    for (int k = 0; k < length; k++)
-                        pxsw[k] =pxw[0,k]*pxw[1,k]*pxw[2,k] ;
-                    for (int k = 0; k < length; k++)
-                    {
-                        if (gen)
-                            pwx[k] = pxsw[k] * (1.0 / length);
+                        if (i < len)
+                            mat[0, index]++;
+                        else if (i < 2 * len)
+                            mat[1, index]++;
+                        else if (i < 3 * len)
+                            mat[2, index]++;
                         else
-                            pwx[k] = pxsw[k];
-                        Px += pxsw[k];
+                            mat[3, index]++;
                     }
-                    for (int k = 0; k < length; k++)
-                        pwx[k] = pwx[k] / Px;
-                    index = Array.IndexOf(pwx,Min(pwx));
-                    if (i < len)
-                        mat[0, index]++;
-                    else if (i < 2 * len)
-                        mat[1, index]++;
-                    else if (i < 3 * len)
-                        mat[2, index]++;
-                    else
-                        mat[3, index]++;
                     res.SetPixel(i, j, classes[index].color);
                 }
-            for (int i = 0; i < 4; i++)
+            if (gen)
             {
-                dr = table.NewRow();
-                dr[0] = "Class "+(i+1).ToString();
-                dr[1] = mat[i, 0];
-                dr[2] = mat[i, 1];
-                dr[3] = mat[i, 2];
-                dr[4] = mat[i, 3];
-                accuracy[i] = mat[i, 0] + mat[i, 1] + mat[i, 2] + mat[i, 3];
-                accuracy[i] = mat[i, i] / accuracy[i];
-                overallAcc += accuracy[i];
-                table.Rows.Add(dr);
+                for (int i = 0; i < 4; i++)
+                {
+                    dr = table.NewRow();
+                    dr[0] = "Class " + (i + 1).ToString();
+                    dr[1] = mat[i, 0];
+                    dr[2] = mat[i, 1];
+                    dr[3] = mat[i, 2];
+                    dr[4] = mat[i, 3];
+                    accuracy[i] = mat[i, 0] + mat[i, 1] + mat[i, 2] + mat[i, 3];
+                    accuracy[i] = mat[i, i] / accuracy[i];
+                    overallAcc += accuracy[i];
+                    table.Rows.Add(dr);
+                }
             }
         }
 
-        private double getPest(int p, int k)
+        private double[] getPest(int l, int k)
         {
-            throw new NotImplementedException();
+            int ClassLength = classes.Length;
+            int SampleLength = classes[0].samples.Length;
+            double [] P= new double[ClassLength];
+            double[] classification = new double[SampleLength];
+            double[] re = new double[ClassLength];
+            for (int i = 0; i < ClassLength; i++)
+            {
+                for (int j = 0; j < SampleLength; j++)
+                {
+                    classification[j]=Math.Sqrt((Math.Pow((classes[i].samples[j].X-l),2))+(Math.Pow((classes[i].samples[j].Y-k),2)))/win;
+                    if (classification[j] < 0.5)
+                    {
+                        K[i]++;
+                        n++;
+                    }
+                }
+            }
+            for (int i = 0; i < ClassLength; i++)
+                P[i] = K[i] / Math.Sqrt(n);
+            return P;
         }
 
         private double Max(double[] arr)
