@@ -16,8 +16,7 @@ namespace PatternRecognition
         private double overallAcc;
         private int win;
         private bool gen;
-        private int [] K;
-        private int n;
+        private double V;
         public Pars(Class [] classes,Bitmap img,int win,bool gen)
         {
             this.classes = classes;
@@ -27,7 +26,7 @@ namespace PatternRecognition
             table = new DataTable("Confusion Matrix");
             accuracy = new double[4];
             overallAcc = 0;
-            n = 0;
+            V = Math.Pow(win, 3);
             Setup();
             Calc();
         }
@@ -39,6 +38,7 @@ namespace PatternRecognition
             table.Columns.Add("Class 2");
             table.Columns.Add("Class 3");
             table.Columns.Add("Class 4");
+            table.Columns.Add("rejected");
         }
 
         private void Calc()
@@ -46,10 +46,9 @@ namespace PatternRecognition
             int index;
             res=new Bitmap(img);
             int length=classes.Length;
-            K = new int[length];
             double[] re = new double[length];
             double len = img.Width / 4;
-            double [,] mat = new double[length, length];
+            double [,] mat = new double[length, length+1];
             DataRow dr;
             for(int i=0;i<img.Width;i++)
                 for(int j=0;j<img.Height;j++)
@@ -58,6 +57,8 @@ namespace PatternRecognition
                     index = Array.IndexOf(re,Max(re));
                     if (gen)
                     {
+                         if (index == -1)
+                              index = 4;
                         if (i < len)
                             mat[0, index]++;
                         else if (i < 2 * len)
@@ -67,7 +68,10 @@ namespace PatternRecognition
                         else
                             mat[3, index]++;
                     }
-                    res.SetPixel(i, j, classes[index].color);
+                     if(index==-1)
+                          res.SetPixel(i, j, Color.Black);
+                     else
+                         res.SetPixel(i, j, classes[index].color);
                 }
             if (gen)
             {
@@ -79,7 +83,8 @@ namespace PatternRecognition
                     dr[2] = mat[i, 1];
                     dr[3] = mat[i, 2];
                     dr[4] = mat[i, 3];
-                    accuracy[i] = mat[i, 0] + mat[i, 1] + mat[i, 2] + mat[i, 3];
+                    dr[5] = mat[i, 4];
+                    accuracy[i] = mat[i, 0] + mat[i, 1] + mat[i, 2] + mat[i, 3] + mat[i, 4];
                     accuracy[i] = mat[i, i] / accuracy[i];
                     overallAcc += accuracy[i];
                     table.Rows.Add(dr);
@@ -93,13 +98,19 @@ namespace PatternRecognition
             int SampleLength = classes[0].samples.Length;
             double [] P= new double[ClassLength];
             double[] classification = new double[SampleLength];
-            double[] re = new double[ClassLength];
+             int [] K=new int[ClassLength];
+             int n=0;
+             Color c=img.GetPixel(l,k);
+             double temp=c.R+c.G+c.B;
+             temp/=3.0;
             for (int i = 0; i < ClassLength; i++)
             {
                 for (int j = 0; j < SampleLength; j++)
                 {
-                    classification[j]=Math.Sqrt((Math.Pow((classes[i].samples[j].X-l),2))+(Math.Pow((classes[i].samples[j].Y-k),2)))/win;
-                    if (classification[j] < 0.5)
+
+                     
+                    classification[j]=Math.Abs(temp-classes[i].samples[j])/win;
+                    if (classification[j] < 1.0/2.0)
                     {
                         K[i]++;
                         n++;
@@ -107,7 +118,8 @@ namespace PatternRecognition
                 }
             }
             for (int i = 0; i < ClassLength; i++)
-                P[i] = K[i] / Math.Sqrt(n);
+                 if( n!=0)
+                P[i] = K[i]/n /V;
             return P;
         }
 

@@ -126,28 +126,28 @@ namespace PatternRecognition
             String[] temp;
 
             //GETTING INPUT AND CONVERTING TO NUMBERS:
-            temp = txtClass1.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            temp = txtTask2Class1.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
             double[][] class1pixels = new double[temp.Length][];
             for(int i=0; i<temp.Length; i++){
                 String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
                 class1pixels[i] = Array.ConvertAll(splitTemp, double.Parse);
             }
 
-            temp = txtClass2.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            temp = txtTask2Class2.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
             double[][] class2pixels = new double[temp.Length][];
             for(int i=0; i<temp.Length; i++){
                 String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
                 class2pixels[i] = Array.ConvertAll(splitTemp, double.Parse);
             }
 
-            temp = txtClass3.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            temp = txtTask2Class3.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
             double[][] class3pixels = new double[temp.Length][];
             for(int i=0; i<temp.Length; i++){
                 String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
                 class3pixels[i] = Array.ConvertAll(splitTemp, double.Parse);
             }
 
-            temp = txtClass4.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            temp = txtTask2Class4.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
             double[][] class4pixels = new double[temp.Length][];
             for(int i=0; i<temp.Length; i++){
                 String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
@@ -234,20 +234,86 @@ namespace PatternRecognition
 
 
             //DEFINE THE 4 CLASSES:
-            Class class1 = new Class(new double[]{mean[0,0],mean[0,1],mean[0,2]}, new double[]{sigma[0,0],sigma[0,1],sigma[0,2]}, Color.Red);
-            Class class2 = new Class(new double[]{mean[1,0],mean[1,1],mean[1,2]}, new double[]{sigma[1,0],sigma[1,1],sigma[1,2]}, Color.Green);
-            Class class3 = new Class(new double[]{mean[2,0],mean[2,1],mean[2,2]}, new double[]{sigma[2,0],sigma[2,1],sigma[2,2]}, Color.Blue);
-            Class class4 = new Class(new double[]{mean[3,0],mean[3,1],mean[3,2]}, new double[]{sigma[3,0],sigma[3,1],sigma[3,2]}, Color.Cyan);
+            //Class class1 = new Class(new double[]{mean[0,0],mean[0,1],mean[0,2]}, new double[]{sigma[0,0],sigma[0,1],sigma[0,2]}, Color.Red);
+            //Class class2 = new Class(new double[]{mean[1,0],mean[1,1],mean[1,2]}, new double[]{sigma[1,0],sigma[1,1],sigma[1,2]}, Color.Green);
+            //Class class3 = new Class(new double[]{mean[2,0],mean[2,1],mean[2,2]}, new double[]{sigma[2,0],sigma[2,1],sigma[2,2]}, Color.Blue);
+            //Class class4 = new Class(new double[]{mean[3,0],mean[3,1],mean[3,2]}, new double[]{sigma[3,0],sigma[3,1],sigma[3,2]}, Color.Cyan);
 
             //CLASSIFY THE IMAGE (PHEW!):
-            Segment segment = new Segment(new Class[]{class1,class2,class3,class4}, theBitmapImage, lambda);
-            rightPictureBox.Image = segment.getResult();
-            new TableForm(segment.getTable(), segment.getAccuracy(), segment.getOverallAccuracy()).ShowDialog();
+            //Segment segment = new Segment(new Class[]{class1,class2,class3,class4}, theBitmapImage, lambda);
+            //rightPictureBox.Image = segment.getResult();
+            //new TableForm(segment.getTable(), segment.getAccuracy(), segment.getOverallAccuracy()).ShowDialog();
 
             //} catch(Exception exp){
             //    MessageBox.Show("Something went wrong. Make sure you enter color values correctly.\n\n(Technically: "+exp.Message+")",
             //        "What?", MessageBoxButtons.OK);
             //}
+        }
+
+        private void btnGenerate3_Click(object sender, EventArgs e)
+        {
+            if(theBitmapImage==null){
+                MessageBox.Show("You have no input image yet. Open or generate an image first.",
+                        "Where?", MessageBoxButtons.OK);
+                return;
+            }
+
+            //try{
+            String[] temp;
+
+            //GETTING INPUT AND CONVERTING TO NUMBERS:
+            temp = txtTask4Class1.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            double[] class1points = new double[temp.Length];
+            for(int i=0; i<temp.Length; i++){
+                String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
+                class1points[i] = double.Parse(splitTemp[0]);
+            }
+
+            temp = txtTask4Class2.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            double[] class2points = new double[temp.Length];
+            for(int i=0; i<temp.Length; i++){
+                String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
+                class2points[i] = double.Parse(splitTemp[0]);
+            }
+
+            temp = txtTask4Class3.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            double[] class3points = new double[temp.Length];
+            for(int i=0; i<temp.Length; i++){
+                String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
+                class3points[i] = double.Parse(splitTemp[0]);
+            }
+
+            temp = txtTask4Class4.Text.Split(new String[]{","}, StringSplitOptions.RemoveEmptyEntries);
+            double[] class4points = new double[temp.Length];
+            for(int i=0; i<temp.Length; i++){
+                String[] splitTemp = temp[i].Split(new String[]{" "}, StringSplitOptions.RemoveEmptyEntries);
+                class4points[i] = double.Parse(splitTemp[0]);
+            }
+
+            //check number of pixels in every class:
+            if(class1points.GetLength(0)!=class2points.GetLength(0) ||
+               class1points.GetLength(0)!=class3points.GetLength(0) ||
+               class1points.GetLength(0)!=class4points.GetLength(0) ||
+               class2points.GetLength(0)!=class3points.GetLength(0) ||
+               class2points.GetLength(0)!=class4points.GetLength(0) ||
+               class3points.GetLength(0)!=class4points.GetLength(0) ){
+                MessageBox.Show("Enter same number of samples (pixels) per class.",
+                        "That's Not Fair", MessageBoxButtons.OK);
+                return;
+            }
+
+            //DEFINE THE 4 CLASSES:
+            Class class1 = new Class(null, null, Color.Red, class1points);
+            Class class2 = new Class(null, null, Color.Green, class2points);
+            Class class3 = new Class(null, null, Color.Blue, class3points);
+            Class class4 = new Class(null, null, Color.Cyan, class4points);
+
+            //CLASSIFY THE IMAGE (PHEW!):
+            Pars thePars = new Pars(new Class[]{class1,class2,class3,class4}, theBitmapImage, (int)numTask4WindowSize.Value, chckGenerated.Checked);
+
+            rightPictureBox.Image = thePars.getResult();
+            if(chckGenerated.Checked) //Display the tables if generated:
+                 new TableForm(thePars.getTable(), thePars.getAccuracy(), thePars.getOverallAccuracy()).ShowDialog();
         }
 
         private int normalRandom(int mu, int sigma)
@@ -269,10 +335,10 @@ namespace PatternRecognition
         private void leftPictureBox_MouseClick(object sender, MouseEventArgs e)
         {
             TextBox input = null;
-                 if(txtClass1.Focused) input=txtClass1;
-            else if(txtClass2.Focused) input=txtClass2;
-            else if(txtClass3.Focused) input=txtClass3;
-            else if(txtClass4.Focused) input=txtClass4;
+                 if(txtTask2Class1.Focused) input=txtTask2Class1;
+            else if(txtTask2Class2.Focused) input=txtTask2Class2;
+            else if(txtTask2Class3.Focused) input=txtTask2Class3;
+            else if(txtTask2Class4.Focused) input=txtTask2Class4;
 
             try{
                 if(input!=null){
@@ -282,6 +348,35 @@ namespace PatternRecognition
                              theBitmapImage.GetPixel(e.X,e.Y).G.ToString()+" "+
                              theBitmapImage.GetPixel(e.X,e.Y).B.ToString());
                     input.Text += text;
+
+                    //Setting cursor position to the end:
+                    input.SelectionStart = input.Text.Length;
+
+                    return;
+                }
+            } catch(ArgumentOutOfRangeException){ /*Pixel out of image dimensions.*/ }
+
+
+            //TESTING NEW
+            input = null;
+                 if(txtTask4Class1.Focused) input=txtTask4Class1;
+            else if(txtTask4Class2.Focused) input=txtTask4Class2;
+            else if(txtTask4Class3.Focused) input=txtTask4Class3;
+            else if(txtTask4Class4.Focused) input=txtTask4Class4;
+
+              try{
+                if(input!=null){
+                    String text = "";
+                    if(input.Text!="") text=", ";
+                    text += Math.Round(((theBitmapImage.GetPixel(e.X,e.Y).R+
+                             theBitmapImage.GetPixel(e.X,e.Y).G+
+                             theBitmapImage.GetPixel(e.X,e.Y).B)/(double)3.0), 2).ToString();
+                    input.Text += text;
+
+                    //Setting cursor position to the end:
+                    input.SelectionStart = input.Text.Length;
+
+                    return;
                 }
             } catch(ArgumentOutOfRangeException){ /*Pixel out of image dimensions.*/ }
 
