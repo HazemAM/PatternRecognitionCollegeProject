@@ -47,6 +47,8 @@ namespace PatternRecognition
             res=new Bitmap(img);
             int length=classes.Length;
             double[] re = new double[length];
+            double Px = 0;
+            double[] pwx = new double[length];
             double len = img.Width / 4;
             double [,] mat = new double[length, length+1];
             DataRow dr;
@@ -54,7 +56,14 @@ namespace PatternRecognition
                 for(int j=0;j<img.Height;j++)
                 {
                     re = getPest(i, j);
-                    index = Array.IndexOf(re,Max(re));
+                    if (gen)
+                         for (int k = 0; k < length; k++)
+                              re[k] *= 1 / 4;
+                    for (int k = 0; k < length; k++)
+                         Px += re[k];
+                    for (int k = 0; k < length; k++)
+                         pwx[k] = re[k] / Px;
+                    index = Array.IndexOf(pwx,Max(pwx));
                     if (gen)
                     {
                          if (index == -1)
